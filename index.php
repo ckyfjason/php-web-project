@@ -1,4 +1,3 @@
-<?php echo "Hello World!";?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./main/styles/hub.css'>
 </head>
 <body>
-
+<? echo "Hello World!";?>
     
 
     <header id="nav">
