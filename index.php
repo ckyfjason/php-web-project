@@ -1,5 +1,5 @@
 <?php echo "Hello World!";?>
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8'>
@@ -8,7 +8,7 @@
     <link rel="icon" href="./main/images/logo.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./main/styles/hub.css'>
-</head>
+</head><!--
 <body>
 
     
