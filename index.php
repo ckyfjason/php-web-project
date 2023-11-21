@@ -10,7 +10,9 @@
     <!--<link rel='stylesheet' type='text/css' media='screen' href='styles/home.css'>-->
 </head>
 <body>
-
+    <?php
+            ehco "Hello World";
+    ?>
 
     <header id="nav">
         <div class="nav--list">
@@ -42,9 +44,7 @@
             <img style="max-height: 550px;object-fit: contain;" src="./main/images/img.PNG">
         </div>
     </section>
-    <?php
-            ehco "Hello World";
-    ?>
+    
 
     <main >
         <section id="room__list">
