@@ -42,13 +42,14 @@
             <img style="max-height: 550px;object-fit: contain;" src="./main/images/img.PNG">
         </div>
     </section>
+    <?php
+            ehco "Hello World";
+    ?>
 
     <main >
         <section id="room__list">
         </section>
-        <?php
-            ehco "Hello World";
-        ?>
+        
      </main>
     
 </body>
