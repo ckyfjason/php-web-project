@@ -9,7 +9,6 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./main/styles/hub.css'>
 </head>
 <body>
-<? echo "Hello World!";?>
     
 
     <header id="nav">
@@ -35,7 +34,7 @@
              </a>
          </div>
      </header> 
-
+     <?php echo "Hello World!";?>
     <div class="hero__section">
         <h2>Capstone<br>Project</h2>
         <div class="hero__section__img">
