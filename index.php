@@ -23,7 +23,7 @@
  
          <div id="nav__links">
             <a class="hub__nav__link" id="register-login__btn" href="">
-                Register
+            <?php echo "Register";?>
             </a>
             <a class="hub__nav__link" id="register-login__btn" href="">
                 Login
@@ -34,7 +34,7 @@
              </a>
          </div>
      </header> 
-     <?php echo "Hello World!";?>
+     
     <div class="hero__section">
         <h2>Capstone<br>Project</h2>
         <div class="hero__section__img">
