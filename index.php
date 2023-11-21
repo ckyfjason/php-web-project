@@ -4,9 +4,9 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>直播平台</title>
-    <link rel="icon" href="./images/logo.png">
+    <link rel="icon" href="./main/images/logo.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='styles/hub.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./main/styles/hub.css'>
     <!--<link rel='stylesheet' type='text/css' media='screen' href='styles/home.css'>-->
 </head>
 <body>
@@ -16,7 +16,7 @@
         <div class="nav--list">
              <a href="index.php">
                  <h3 id="logo">
-                     <img src="./images/logo.png" alt="Site Logo">
+                     <img src="./main/images/logo.png" alt="Site Logo">
                      <span>直播平台</span>
                  </h3>
              </a>
@@ -39,7 +39,7 @@
     <div class="hero__section">
         <h2>Capstone<br>Project</h2>
         <div class="hero__section__img">
-            <img style="max-height: 550px;object-fit: contain;" src="./images/img.PNG">
+            <img style="max-height: 550px;object-fit: contain;" src="./main/images/img.PNG">
         </div>
     </section>
 
@@ -52,7 +52,7 @@
      </main>
     
 </body>
-<script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
-<script type="text/javascript" src="js/agora-rtm-sdk-1.4.4.js"></script>
-<script src='js/home.js'></script>
+<script type="text/javascript" src="./main/js/AgoraRTC_N-4.11.0.js"></script>
+<script type="text/javascript" src="./main/js/agora-rtm-sdk-1.4.4.js"></script>
+<script src='./main/js/home.js'></script>
 </html>
