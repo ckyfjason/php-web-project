@@ -34,6 +34,7 @@ if (isset($_POST['username'])) {
         if (password_verify($password, $hashedPassword)) {
             $_SESSION['username'] = $username;
             header("Location: index.php");
+            exit;
         } else {
             echo "<div class='form'>
                   <h3>用戶名稱或密碼不正確。</h3>
