@@ -18,25 +18,33 @@ $conn = sqlsrv_connect($serverName, array(
 
 if ($conn) {
     if (isset($_POST['submit'])) {
-        // 使用 password_hash 函數進行密碼哈希
-        $hashedPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
+        // 引入使用者填的資料
+        $hashedPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);// 使用 password_hash 函數進行密碼哈希
         $username = $_POST['username'];
         $email = $_POST['email'];
         $trn_date = date("Y-m-d H:i:s");
+        // 偵測使用者名稱是重複
+        $checkQuery = "SELECT COUNT(*) AS count FROM users WHERE username = ?";
+        $checkParams = array($username);
+        $checkStmt = sqlsrv_query($conn, $checkQuery, $checkParams);
+        $row = sqlsrv_fetch_array($checkStmt, SQLSRV_FETCH_ASSOC);
+                
+        if ($row['count'] > 0) { // 使用者名稱已存在，向使用者顯示錯誤訊息
+                echo "使用者名稱已存在。請選擇不同的使用者名稱。";
+        } else { // 使用者名稱無使用，向使用者顯示錯誤訊息
+                        
+                $query = "INSERT into users (username, password, email, trn_date) VALUES (?, ?, ?, ?)";        
+                $params = array($username, $hashedPassword, $email, $trn_date);
 
-        $query = "INSERT into users (username, password, email, trn_date)
-                  VALUES (?, ?, ?, ?)";
-        $params = array($username, $hashedPassword, $email, $trn_date);
+                $stmt = sqlsrv_query($conn, $query, $params);
 
-        $stmt = sqlsrv_query($conn, $query, $params);
-
-        if ($stmt) {
-                echo "<div class='form'>
-                <h3>註冊成功。</h3>
-                <br/>點擊這裡<a href='login.php'>登錄</a></div>";
-        } else {
-            die(print_r(sqlsrv_errors(), true));
+                if ($stmt) {
+                        echo "<div class='form'>
+                        <h3>註冊成功。</h3>
+                        <br/>點擊這裡<a href='login.php'>登錄</a></div>";
+                } else {
+                die(print_r(sqlsrv_errors(), true));
+                }
         }
     } else {
 ?>
