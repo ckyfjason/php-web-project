@@ -5,10 +5,10 @@
 </head>
 <body>
 <?php
-$serverName = "streamweb-dbserver.database.windows.net"; // 資料庫伺服器名稱
-$username = "ckyfjason"; // 資料庫使用者名稱
-$password = "Database@password"; // 資料庫密碼
-$dbname = "streamweb-formaldb"; // 資料庫名稱
+$serverName = "streamweb-dbserver.database.windows.net";
+$username = "ckyfjason";
+$password = "Database@password";
+$dbname = "streamweb-formaldb";
 
 $conn = sqlsrv_connect($serverName, array(
     "Database" => $dbname,
@@ -16,39 +16,20 @@ $conn = sqlsrv_connect($serverName, array(
     "PWD" => $password
 ));
 
-// 檢查連線是否成功
-/*if ($conn) {
-    echo "Connected successfully"; // 連線成功時顯示訊息
-    // 在此可進行資料庫操作
-} else {
-    die(print_r(sqlsrv_errors(), true)); // 顯示連線錯誤訊息並停止程式執行
-}*/
-
 if ($conn) {
-    // 如果表單提交，將值插入資料庫。
-    if ( isset($_REQUEST['username'])) {
-        // 刪除反斜線
-        echo "Test2";
-        //$username = stripslashes($_POST['username']);
-        // 轉義特殊字符
-        //$username = sqlsrv_real_escape_string($username);
-        $username = "88888"; 
-        //$email = stripslashes($_POST['email']);
-        //$email = sqlsrv_real_escape_string($email);
-        $email = "ckyf@g";
-        //$password = stripslashes($_POST['password']);
-        //$password = sqlsrv_real_escape_string($password);
-        //$hashedPassword = password_hash($password, PASSWORD_BCRYPT); // 使用bcrypt進行密碼哈希
-        $hashedPassword = "123456";
-        $trn_date = "2023-12-01 15:30:00";
+    if (isset($_REQUEST['username'])) {
+        // 使用 password_hash 函數進行密碼哈希
+        $hashedPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        $query = "INSERT INTO dbo.users (username, password, email, trn_date)
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $trn_date = date("Y-m-d H:i:s");
+
+        $query = "INSERT into users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
-        //$params = array($username, $hashedPassword, $email, $trn_date);
-        $params = array('aaaaa', '123', 'ckyfj@g', "2023-12-01 15:30:00");
+        $params = array($username, $hashedPassword, $email, $trn_date);
 
         $stmt = sqlsrv_query($conn, $query, $params);
-
 
         if ($stmt) {
             echo "<div class='form'>
@@ -57,7 +38,6 @@ if ($conn) {
         } else {
             die(print_r(sqlsrv_errors(), true));
         }
-        
     } else {
 ?>
     <div class="form">
