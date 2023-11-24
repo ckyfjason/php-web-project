@@ -27,7 +27,7 @@ if ($conn) {
         $query = "INSERT into dbo.users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
         //$params = array($username, $hashedPassword, $email, $trn_date);
-        $params = array('aaaaa', '123', 'ckyfj@', '123123123');
+        $params = array('aaaaa', '123', 'ckyfj@g', "2023-12-01 15:30:00");
 
         $stmt = sqlsrv_query($conn, $query, $params);
 
