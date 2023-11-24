@@ -19,5 +19,5 @@ if ($conn) {
 } else {
     die(print_r(sqlsrv_errors(), true)); // 顯示連線錯誤訊息並停止程式執行
 }
-sqlsrv_close($conn); //?
+//sqlsrv_close($conn); //?
 ?>
