@@ -65,7 +65,7 @@ if ($conn) {
             <input type="text" name="username" placeholder="用戶名" required />
             <input type="email" name="email" placeholder="電子郵件" required />
             <input type="password" name="password" placeholder="密碼" required />
-            <input type="submit" name="submit" value="註冊" />
+            <input type="submit" name="submit" value="submit" />
         </form>
     </div>
 <?php
