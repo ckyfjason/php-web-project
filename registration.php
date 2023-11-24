@@ -25,7 +25,7 @@ if ($conn) {
         $email = $_POST['email'];
         $trn_date = date("Y-m-d H:i:s");
 
-        $query = "INSERT into users (username, password, email, trn_date)
+        $query = "INSERT INTO dbo.users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
         $params = array($username, $hashedPassword, $email, $trn_date);
 
