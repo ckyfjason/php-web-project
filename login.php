@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
-<title>Login</title>
+<title>登入</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 <?php
-require('db.php');
+$serverName = "streamweb-dbserver.database.windows.net";
+$username = "ckyfjason";
+$password = "Database@password";
+$dbname = "streamweb-formaldb";
+
+$conn = sqlsrv_connect($serverName, array(
+    "Database" => $dbname,
+    "UID" => $username,
+    "PWD" => $password
+));
 
 if (isset($_POST['username'])){
-    // removes backslashes
-$username = stripslashes($_REQUEST['username']);
-    //escapes special characters in a string
-$username = mysqli_real_escape_string($con,$username);
-$password = stripslashes($_REQUEST['password']);
-$password = mysqli_real_escape_string($con,$password);
-//Checking is user existing in the database or not
-    $query = "SELECT * FROM users WHERE username='$username'
-and password='".md5($password)."'";
-$result = mysqli_query($con,$query) or die(mysql_error());
-$rows = mysqli_num_rows($result);
-    if($rows==1){
-    $_SESSION['username'] = $username;
-        // Redirect user to index.php
-    header("Location: index.php");
-     }else{
-echo "<div class='form'>
-<h3>Username/password is incorrect.</h3>
-<br/>Click here to <a href='login.php'>Login</a></div>";
-}
-}else{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM users WHERE username=? AND password=?";
+
+    $params = array($username, md5($password)); // 這裡使用 md5 進行簡單的哈希，推薦使用更安全的方法
+
+    $stmt = sqlsrv_query($conn, $query, $params);
+    $rows = sqlsrv_num_rows($stmt);
+
+    if ($rows == 1) {
+        $_SESSION['username'] = $username;
+        header("Location: index.php");
+    } else {
+        echo "<div class='form'>
+              <h3>用戶名稱或密碼不正確。</h3>
+              <br/>點擊這裡<a href='login.php'>登入</a></div>";
+    }
+} else {
 ?>
 
-
-
 <div class="form">
-<h1>Log In</h1>
+<h1>登入</h1>
 <form action="" method="post" name="login">
-<input type="text" name="username" placeholder="Username" required />
-<input type="password" name="password" placeholder="Password" required />
+<input type="text" name="username" placeholder="用戶名" required />
+<input type="password" name="password" placeholder="密碼" required />
 <br>
-<input name="submit" type="submit" value="Login" />
+<input name="submit" type="submit" value="登入" />
 </form>
-<p>Not registered yet? <a href='registration.php'>Register Here</a></p>
+<p>還未註冊？<a href='registration.php'>在這裡註冊</a></p>
 </div>
-<?php } ?>
+<?php
+}
+
+sqlsrv_close($conn);
+?>
 
 </body>
 </html>
