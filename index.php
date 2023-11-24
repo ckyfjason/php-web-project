@@ -22,7 +22,7 @@
         </div>
  
          <div id="nav__links">
-            <a class="hub__nav__link" id="register-login__btn" href="">
+            <a class="hub__nav__link" id="register-login__btn" href="./registration.php">
             <?php echo "Register";?>
             </a>
             <a class="hub__nav__link" id="register-login__btn" href="./login.php">
