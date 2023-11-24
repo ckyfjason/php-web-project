@@ -21,11 +21,15 @@ if ($conn) {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // 使用bcrypt進行密碼哈希
         $trn_date = date("Y-m-d H:i:s");
 
-        $query = "INSERT into users ('username', password, 'email', trn_date)
+        $query = "INSERT into users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
-        $params = array($username, $hashedPassword, $email, 123);
+        $params = array('$username', '$hashedPassword', '$email', '2023-12-01 15:30:00');
         
         $stmt = sqlsrv_query($conn, $query, $params);
+
+        if ($stmt === false) {
+                die(print_r(sqlsrv_errors(), true));
+            }
 
         if ($stmt) {
             echo "<div class='form'>
@@ -34,6 +38,7 @@ if ($conn) {
         } else {
             die(print_r(sqlsrv_errors(), true));
         }
+        
     } else {
 ?>
     <div class="form">
