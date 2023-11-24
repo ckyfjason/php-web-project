@@ -33,7 +33,9 @@ if (isset($_POST['username'])) {
         // 使用 password_verify 函數進行密碼驗證
         if (password_verify($password, $hashedPassword)) {
             $_SESSION['username'] = $username;
-            header("refresh:2;url=https://streamweb.azurewebsites.net/main/lobby.html");
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "index.php";';
+            echo '</script>';
         } else {
             echo "<div class='form'>
                   <h3>用戶名稱或密碼不正確。</h3>
