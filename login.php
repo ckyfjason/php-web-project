@@ -32,8 +32,10 @@ if (isset($_POST['username'])) {
 
         // 使用 password_verify 函數進行密碼驗證
         if (password_verify($password, $hashedPassword)) {
-            //$_SESSION['username'] = $username;
+            $_SESSION['username'] = $username;
+            ob_start();  // 啟動緩衝區
             header("Location: index.php");
+            ob_end_flush();  // 刷新緩衝區並輸出緩衝區的內容
             exit;
         } else {
             echo "<div class='form'>
