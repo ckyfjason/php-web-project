@@ -1,3 +1,8 @@
+<?php
+    if( !$_SESSION['username']) {
+        header('Location: index.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
