@@ -3,7 +3,8 @@ session_start();
 // Destroying All Sessions
 if(session_destroy())
 {
-// Redirecting To Home Page
-header("Location: login.php");
+    echo '<script type="text/javascript">';
+    echo 'window.location.href = "index.php";';
+    echo '</script>';
 }
 ?> 
