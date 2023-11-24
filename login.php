@@ -32,7 +32,7 @@ if (isset($_POST['username'])) {
 
         // 使用 password_verify 函數進行密碼驗證
         if (password_verify($password, $hashedPassword)) {
-            $_SESSION['username'] = $username;
+            //$_SESSION['username'] = $username;
             header("Location: index.php");
             exit;
         } else {
