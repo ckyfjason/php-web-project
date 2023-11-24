@@ -36,8 +36,6 @@ if (isset($_POST['username'])) {
 
     if ($row) {
         $hashedPassword = $row['password'];
-
-        // 使用 password_verify 函數進行密碼驗證
         if (password_verify($password, $hashedPassword)) {
             $_SESSION['username'] = $username;
             echo '<script type="text/javascript">';
