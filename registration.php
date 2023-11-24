@@ -21,9 +21,9 @@ if ($conn) {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // 使用bcrypt進行密碼哈希
         $trn_date = date("Y-m-d H:i:s");
 
-        $query = "INSERT into users (username, password, email, trn_date)
+        $query = "INSERT into users ('username', password, 'email', trn_date)
                   VALUES (?, ?, ?, ?)";
-        $params = array($username, $hashedPassword, $email, $trn_date);
+        $params = array($username, $hashedPassword, $email, 123);
         
         $stmt = sqlsrv_query($conn, $query, $params);
 
