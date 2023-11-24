@@ -21,7 +21,7 @@ if ($conn) {
         $password = stripslashes($_POST['password']);
         $password = sqlsrv_real_escape_string($password);
         //$hashedPassword = password_hash($password, PASSWORD_BCRYPT); // 使用bcrypt進行密碼哈希
-        $hashedPassword = "123456"
+        $hashedPassword = "123456";
         $trn_date = "2023-12-01 15:30:00";
 
         $query = "INSERT into users (username, password, email, trn_date)
