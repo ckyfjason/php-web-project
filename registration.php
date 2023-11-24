@@ -33,7 +33,7 @@ if ($conn) {
                 echo "<div class='form'>
                 <h3>使用者名稱已被註冊，</h3>
                 <h3>請重新註冊。</h3>
-                <a href='login.php'>點擊這裡重新註冊</a></div>";
+                <a href='registration.php'>點擊這裡重新註冊</a></div>";
         } else { // 使用者名稱無使用，向使用者顯示錯誤訊息        
                 $query = "INSERT into users (username, password, email, trn_date) VALUES (?, ?, ?, ?)";        
                 $params = array($username, $hashedPassword, $email, $trn_date);
@@ -51,9 +51,9 @@ if ($conn) {
     <div class="form">
         <h1>註冊</h1>
         <form name="registration" action="" method="post">
-            <input type="text" name="username" placeholder="用戶名" required />
-            <input type="email" name="email" placeholder="電子郵件" required />
-            <input type="password" name="password" placeholder="密碼" required />
+            <input type="text" name="username" placeholder="用戶名" required maxlength="20" />
+            <input type="email" name="email" placeholder="電子郵件" />
+            <input type="password" name="password" placeholder="密碼" required maxlength="20" />
             <input type="submit" name="submit" value="submit" />
         </form>
     </div>
