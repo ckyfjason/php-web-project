@@ -31,9 +31,9 @@ if ($conn) {
                 
         if ($row['count'] > 0) { // 使用者名稱已存在，向使用者顯示錯誤訊息
                 echo "<div class='form'>
-                        <h3>使用者名稱已被註冊，</h3>
-                        <h3>請重新註冊。</h3>
-                        <a href="./logout.php"> 點我重新註冊 </a></div>";
+                <h3>使用者名稱已被註冊，</h3>
+                <h3>請重新註冊。</h3>
+                <a href='login.php'>點擊這裡重新註冊</a></div>";
         } else { // 使用者名稱無使用，向使用者顯示錯誤訊息        
                 $query = "INSERT into users (username, password, email, trn_date) VALUES (?, ?, ?, ?)";        
                 $params = array($username, $hashedPassword, $email, $trn_date);
