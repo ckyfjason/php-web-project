@@ -13,17 +13,20 @@ if ($conn) {
         // 刪除反斜線
         $username = stripslashes($_POST['username']);
         // 轉義特殊字符
-        $username = sqlsrv_real_escape_string($username); 
+        //$username = sqlsrv_real_escape_string($username);
+        $username = "88888"; 
         $email = stripslashes($_POST['email']);
-        $email = sqlsrv_real_escape_string($email);
+        //$email = sqlsrv_real_escape_string($email);
+        $email = "ckyf@g";
         $password = stripslashes($_POST['password']);
         $password = sqlsrv_real_escape_string($password);
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // 使用bcrypt進行密碼哈希
-        $trn_date = date("Y-m-d H:i:s");
+        //$hashedPassword = password_hash($password, PASSWORD_BCRYPT); // 使用bcrypt進行密碼哈希
+        $hashedPassword = "123456"
+        $trn_date = "2023-12-01 15:30:00";
 
         $query = "INSERT into users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
-        $params = array($username, $hashedPassword, $email, '2023-12-01 15:30:00');
+        $params = array($username, $hashedPassword, $email, $trn_date);
         
         $stmt = sqlsrv_query($conn, $query, $params);
 
