@@ -26,7 +26,7 @@ if ($conn) {
 
 if ($conn) {
     // 如果表單提交，將值插入資料庫。
-    if (isset($_POST['submit'])) {
+    if ( isset($_REQUEST['username'])) {
         // 刪除反斜線
         $username = stripslashes($_POST['username']);
         // 轉義特殊字符
