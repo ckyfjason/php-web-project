@@ -30,14 +30,13 @@ if ($conn) {
         $row = sqlsrv_fetch_array($checkStmt, SQLSRV_FETCH_ASSOC);
                 
         if ($row['count'] > 0) { // 使用者名稱已存在，向使用者顯示錯誤訊息
-                echo "使用者名稱已存在。請選擇不同的使用者名稱。";
-        } else { // 使用者名稱無使用，向使用者顯示錯誤訊息
-                        
+                echo "<div class='form'>
+                        <h3>使用者名稱已被註冊，</h3>
+                        <h3>請重新註冊</h3>";
+        } else { // 使用者名稱無使用，向使用者顯示錯誤訊息        
                 $query = "INSERT into users (username, password, email, trn_date) VALUES (?, ?, ?, ?)";        
                 $params = array($username, $hashedPassword, $email, $trn_date);
-
                 $stmt = sqlsrv_query($conn, $query, $params);
-
                 if ($stmt) {
                         echo "<div class='form'>
                         <h3>註冊成功。</h3>
