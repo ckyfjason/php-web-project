@@ -23,13 +23,10 @@ if ($conn) {
 
         $query = "INSERT into users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
-        $params = array('$username', '$hashedPassword', '$email', '2023-12-01 15:30:00');
+        $params = array($username, $hashedPassword, $email, '2023-12-01 15:30:00');
         
         $stmt = sqlsrv_query($conn, $query, $params);
 
-        if ($stmt === false) {
-                die(print_r(sqlsrv_errors(), true));
-            }
 
         if ($stmt) {
             echo "<div class='form'>
