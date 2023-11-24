@@ -9,7 +9,7 @@
 require('db.php');
 session_start();
 // If form submitted, insert values into the database.
-if (isset($_POST['username'])){
+/*if (isset($_POST['username'])){
         // removes backslashes
 	$username = stripslashes($_REQUEST['username']);
         //escapes special characters in a string
@@ -30,7 +30,7 @@ and password='".md5($password)."'";
 <h3>Username/password is incorrect.</h3>
 <br/>Click here to <a href='login.php'>Login</a></div>";
 	}
-    }else{
+    }else{*/
 ?>
 <div class="form">
 <h1>Log In</h1>
