@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<!--	
 <?php
 require('db.php');
 session_start();
@@ -31,7 +32,7 @@ and password='".md5($password)."'";
 <br/>Click here to <a href='login.php'>Login</a></div>";
 	}
     }else{*/
-?>
+?>-->
 <div class="form">
 <h1>Log In</h1>
 <form action="" method="post" name="login">
