@@ -17,28 +17,35 @@ $conn = sqlsrv_connect($serverName, array(
     "PWD" => $password
 ));
 
-if (isset($_POST['username'])){
+if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM users WHERE username=? AND password=?";
-
-    $params = array($username, md5($password)); // 這裡使用 md5 進行簡單的哈希，推薦使用更安全的方法
+    $query = "SELECT password FROM users WHERE username=?";
+    $params = array($username);
 
     $stmt = sqlsrv_query($conn, $query, $params);
-    $rows = sqlsrv_num_rows($stmt);
+    $row = sqlsrv_fetch_array($stmt);
 
-    if ($rows == 1) {
-        $_SESSION['username'] = $username;
-        header("Location: index.php");
+    if ($row) {
+        $hashedPassword = $row['password'];
+
+        // 使用 password_verify 函數進行密碼驗證
+        if (password_verify($password, $hashedPassword)) {
+            $_SESSION['username'] = $username;
+            header("Location: index.php");
+        } else {
+            echo "<div class='form'>
+                  <h3>用戶名稱或密碼不正確。</h3>
+                  <br/>點擊這裡<a href='login.php'>登入</a></div>";
+        }
     } else {
         echo "<div class='form'>
-              <h3>用戶名稱或密碼不正確。</h3>
+              <h3>用戶名稱不存在。</h3>
               <br/>點擊這裡<a href='login.php'>登入</a></div>";
     }
 } else {
 ?>
-
 <div class="form">
 <h1>登入</h1>
 <form action="" method="post" name="login">
