@@ -24,7 +24,7 @@ if ($conn) {
         $hashedPassword = "123456";
         $trn_date = "2023-12-01 15:30:00";
 
-        $query = "INSERT into users (username, password, email, trn_date)
+        $query = "INSERT into dbo.users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
         //$params = array($username, $hashedPassword, $email, $trn_date);
         $params = array('aaaaa', '123', 'ckyfj@', '123123123');
