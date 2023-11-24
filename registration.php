@@ -28,6 +28,7 @@ if ($conn) {
     // 如果表單提交，將值插入資料庫。
     if ( isset($_REQUEST['username'])) {
         // 刪除反斜線
+        echo "Test2";
         $username = stripslashes($_POST['username']);
         // 轉義特殊字符
         //$username = sqlsrv_real_escape_string($username);
