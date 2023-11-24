@@ -17,7 +17,7 @@ $conn = sqlsrv_connect($serverName, array(
 ));
 
 if ($conn) {
-    if (isset($_REQUEST['username'])) {
+    if (isset($_POST['submit'])) {
         // 使用 password_hash 函數進行密碼哈希
         $hashedPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
@@ -25,7 +25,7 @@ if ($conn) {
         $email = $_POST['email'];
         $trn_date = date("Y-m-d H:i:s");
 
-        $query = "INSERT INTO dbo.users (username, password, email, trn_date)
+        $query = "INSERT into users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
         $params = array($username, $hashedPassword, $email, $trn_date);
 
