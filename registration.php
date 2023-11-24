@@ -29,25 +29,25 @@ if ($conn) {
     if ( isset($_REQUEST['username'])) {
         // 刪除反斜線
         echo "Test2";
-        $username = stripslashes($_POST['username']);
+        //$username = stripslashes($_POST['username']);
         // 轉義特殊字符
         //$username = sqlsrv_real_escape_string($username);
         $username = "88888"; 
-        $email = stripslashes($_POST['email']);
+        //$email = stripslashes($_POST['email']);
         //$email = sqlsrv_real_escape_string($email);
         $email = "ckyf@g";
-        $password = stripslashes($_POST['password']);
-        $password = sqlsrv_real_escape_string($password);
+        //$password = stripslashes($_POST['password']);
+        //$password = sqlsrv_real_escape_string($password);
         //$hashedPassword = password_hash($password, PASSWORD_BCRYPT); // 使用bcrypt進行密碼哈希
         $hashedPassword = "123456";
         $trn_date = "2023-12-01 15:30:00";
 
-        $query = "INSERT into dbo.users (username, password, email, trn_date)
+        $query = "INSERT INTO dbo.users (username, password, email, trn_date)
                   VALUES (?, ?, ?, ?)";
         //$params = array($username, $hashedPassword, $email, $trn_date);
         $params = array('aaaaa', '123', 'ckyfj@g', "2023-12-01 15:30:00");
 
-        $stmt = sqlsrv_query($conn, "INSERT into dbo.users (username, password, email, trn_date) VALUES (?, ?, ?, ?)", array('aaaaa', '123', 'ckyfj@g', "2023-12-01 15:30:00"));
+        $stmt = sqlsrv_query($conn, $query, $params);
 
 
         if ($stmt) {
