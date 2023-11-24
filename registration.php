@@ -23,6 +23,13 @@ if ($conn) {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $trn_date = date("Y-m-d H:i:s");
+        if (!preg_match('/^[a-zA-Z0-9]+$/', $username)) {
+                echo "<div class='form'>
+                        <h3>用戶名不能包含中文和符號，請重新輸入。</h3>
+                        <a href='registration.php'> 點我重新註冊 </a>
+                        </div>";
+                exit(); // 中斷程式執行
+            }
         // 偵測使用者名稱是重複
         $checkQuery = "SELECT COUNT(*) AS count FROM users WHERE username = ?";
         $checkParams = array($username);
@@ -31,9 +38,10 @@ if ($conn) {
                 
         if ($row['count'] > 0) { // 使用者名稱已存在，向使用者顯示錯誤訊息
                 echo "<div class='form'>
-                <h3>使用者名稱已被註冊，</h3>
-                <h3>請重新註冊。</h3>
-                <a href='registration.php'>點擊這裡重新註冊</a></div>";
+                        <h3>使用者名稱已被註冊，</h3>
+                        <h3>請重新輸入。</h3>
+                        <a href='registration.php'>點擊這裡重新註冊</a></div>";
+                exit();
         } else { // 使用者名稱無使用，向使用者顯示錯誤訊息        
                 $query = "INSERT into users (username, password, email, trn_date) VALUES (?, ?, ?, ?)";        
                 $params = array($username, $hashedPassword, $email, $trn_date);
