@@ -25,7 +25,7 @@
             <a class="hub__nav__link" id="register-login__btn" href="">
             <?php echo "Register";?>
             </a>
-            <a class="hub__nav__link" id="register-login__btn" href="">
+            <a class="hub__nav__link" id="register-login__btn" href="./login.php">
                 Login
             </a>
              <a class="nav__link" id="create__room__btn" href="./main/lobby.html">
