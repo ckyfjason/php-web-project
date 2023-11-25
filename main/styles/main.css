@@ -132,17 +132,6 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-#register-login__btn { /*畫面上方創建房間標題欄按鈕*/
-  display: block;
-  /*background-color: #5105ca; /*845695*/
-  padding: 8px 24px;
-  font-size: 14px;
-  font-weight: 500;
-  /*border-radius: 5px;*/
-  border-bottom: 1px;
-}
-
-
 #create__room__btn { /*畫面上方創建房間標題欄按鈕*/
   display: block;
   background-color: #5105ca; /*845695*/

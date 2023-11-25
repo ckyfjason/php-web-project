@@ -27,15 +27,15 @@
          <div id="nav__links">
             <?php
             if(empty($_SESSION['username']) ) { echo//當用戶沒有登入時
-                '<a class="hub__nav__link" id="register-login__btn" href="./registration.php">
+                '<a class="hub__nav__link" href="./registration.php">
                 Register
                 </a>
-                <a class="hub__nav__link" id="register-login__btn" href="./login.php">
+                <a class="hub__nav__link" href="./login.php">
                 Login
                 </a>';
             } else { echo //當用已登入時
-                '<a class="hub__nav__link" id="register-login__btn"> Hi, '. $_SESSION['username'] .'!</a>
-                <a class="hub__nav__link" id="register-login__btn" href="./logout.php">
+                '<a class="hub__nav__link"> Hi, '. $_SESSION['username'] .'!</a>
+                <a class="hub__nav__link" href="./logout.php">
                 Logout
                 </a>';
             }
