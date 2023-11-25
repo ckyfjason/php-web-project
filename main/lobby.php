@@ -26,10 +26,10 @@
         <div id="nav__links">
         <?php
             if(empty($_SESSION['username']) ) { echo//當用戶沒有登入時
-                '<a class="hub__nav__link" href="./registration.php">
+                '<a class="hub__nav__link" href="../registration.php">
                 Register
                 </a>
-                <a class="hub__nav__link" href="./login.php">
+                <a class="hub__nav__link" href="../login.php">
                 Login
                 </a>';
             } else { echo //當用已登入時
@@ -39,7 +39,7 @@
                 </a>';
             }
             ?>
-             <a class="nav__link" id="create__room__btn" href="./main/lobby.php">
+             <a class="nav__link" id="create__room__btn" href="/">
                  已在創建
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
              </a>
