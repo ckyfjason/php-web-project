@@ -2,7 +2,7 @@
     session_start();
     if(!empty($_SESSION['username']) ) {
         //header('Location: index.php');
-        echo "<div class='form' width= "300px" margin="0">
+        echo "<div class='form' style="width: 300px ; margin: 0 auto">
                   <h3>你已登入。</h3>
                   <br/>點擊這裡<a href='index.php'>返回</a></div>";
         exit();
