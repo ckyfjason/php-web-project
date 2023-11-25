@@ -121,8 +121,8 @@ a {
   display: block;
   font-size: 16px;
   font-weight: 500;
-  
   text-decoration: none;
+  border-bottom: 2px solid transparent;
   padding-bottom: 1px;
 }
 
@@ -130,7 +130,6 @@ a {
   color: #e6e4e4;
   text-decoration: none;
   border-color: #5105ca;
-  /*padding: 0.2em 0.2em;*/
   transition: all 0.3s ease-in-out;
 }
 
