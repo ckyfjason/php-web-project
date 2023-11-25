@@ -29,7 +29,7 @@
                 Logout
             </a>
             <?php
-            if(isset($_SESSION['username'])) { echo
+            if(!empty($_SESSION['username']) ) { echo
             "<a class="hub__nav__link" id="register-login__btn" href="./login.php">
                 Login
             </a>";
