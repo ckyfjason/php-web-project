@@ -1,7 +1,10 @@
 <?php
     session_start();
     if(!empty($_SESSION['username']) ) {
-        header('Location: index.php');
+        //header('Location: index.php');
+        echo "<div class='form'>
+                  <h3>你已登入。</h3>
+                  <br/>點擊這裡<a href='index.php'>返回</a></div>";
         exit();
     }
 ?>
@@ -41,7 +44,7 @@ if (isset($_POST['username'])) {
             echo "<div class='form'>
                 <h3>登入成功。</h3>";               
             echo    "<h3>歡迎回來, ".$_SESSION['username']."</h3>";
-            echo    "<br/>點擊這裡<a href='login.php'>登入</a></div>";
+            echo    "<br/>點擊這裡<a href='index.php'>返回</a></div>";
         } else {
             echo "<div class='form'>
                   <h3>用戶名稱或密碼不正確。</h3>
