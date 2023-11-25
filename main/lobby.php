@@ -13,6 +13,15 @@
     <link rel='stylesheet' type='text/css' media='screen' href='styles/lobby.css'>
 </head>
 <body>
+<?php
+if(empty($_SESSION['username']) ) {
+    //header('Location: index.php');
+    echo "<div class='form'>
+              <h3>你還沒登入。</h3>
+              <br/>給我回去，<a href='../index.php'>返回</a></div>";
+    exit();
+}
+?> 
     <header id="nav">
        <div class="nav--list">
             <a href="https://streamweb.azurewebsites.net">
