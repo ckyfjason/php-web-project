@@ -40,8 +40,8 @@ if (isset($_POST['username'])) {
             $_SESSION['username'] = $username;
             echo "<div class='form'>
                 <h3>登入成功。</h3>";               
-                "<h3>歡迎回來, ".$_SESSION['username']."</h3>"
-                "<br/>點擊這裡<a href='login.php'>登入</a></div>";
+            echo    "<h3>歡迎回來, ".$_SESSION['username']."</h3>";
+            echo    "<br/>點擊這裡<a href='login.php'>登入</a></div>";
         } else {
             echo "<div class='form'>
                   <h3>用戶名稱或密碼不正確。</h3>
