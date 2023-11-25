@@ -42,7 +42,7 @@ if ($conn) {
                         <h3>請重新輸入。</h3>
                         <a href='registration.php'>點擊這裡重新註冊</a></div>";
                 exit();
-        } else { // 使用者名稱無使用，向使用者顯示錯誤訊息        
+        } else {        
                 $query = "INSERT into users (username, password, email, trn_date) VALUES (?, ?, ?, ?)";        
                 $params = array($username, $hashedPassword, $email, $trn_date);
                 $stmt = sqlsrv_query($conn, $query, $params);
@@ -59,7 +59,7 @@ if ($conn) {
     <div class="form">
         <h1>註冊</h1>
         <form name="registration" action="" method="post">
-            <input type="text" name="username" placeholder="用戶名" required maxlength="20" />
+            <input type="text" name="username" placeholder="使用者名稱" required maxlength="20" />
             <input type="email" name="email" placeholder="電子郵件" />
             <input type="password" name="password" placeholder="密碼" required maxlength="20" />
             <input type="submit" name="submit" value="submit" />
