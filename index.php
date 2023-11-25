@@ -25,17 +25,18 @@
         </div>
  
          <div id="nav__links">
-            <a class="hub__nav__link" id="register-login__btn" href="./registration.php">
-            <?php echo "Register";?>
-            </a>
-            <a class="hub__nav__link" id="register-login__btn" href="./logout.php">
-                Logout
-            </a>
             <?php
-            if(!empty($_SESSION['username']) ) {
-                echo '<a class="hub__nav__link" id="register-login__btn" href="./login.php">
-                    Login
-                    </a>';
+            if(empty($_SESSION['username']) ) { echo//當用戶沒有登入時
+                '<a class="hub__nav__link" id="register-login__btn" href="./registration.php">
+                Register
+                </a>
+                <a class="hub__nav__link" id="register-login__btn" href="./login.php">
+                Login
+                </a>';
+            } else { echo //當用已登入時
+                '<a class="hub__nav__link" id="register-login__btn" href="./logout.php">
+                Logout
+                </a>';
             }
             ?>
              <a class="nav__link" id="create__room__btn" href="./main/lobby.html">
