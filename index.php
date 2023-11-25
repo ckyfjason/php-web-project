@@ -32,10 +32,10 @@
                 Logout
             </a>
             <?php
-            if(!empty($_SESSION['username']) ) { echo
-            "<a class="hub__nav__link" id="register-login__btn" href="./login.php">
-                Login
-            </a>";
+            if(!empty($_SESSION['username']) ) {
+                echo "<a class="hub__nav__link" id="register-login__btn" href="./login.php">
+                    Login
+                    </a>";
             }
             ?>
              <a class="nav__link" id="create__room__btn" href="./main/lobby.html">
