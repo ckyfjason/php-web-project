@@ -1,5 +1,8 @@
 body {
      font-family:Arial, Sans-Serif;
+     background-color: #1a1a1a;/*1a1a1a*/
+     color: #fff;
+     font-size: 14px;
 }
 
 .clearfix:before, .clearfix:after{
