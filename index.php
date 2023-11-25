@@ -28,9 +28,13 @@
             <a class="hub__nav__link" id="register-login__btn" href="./logout.php">
                 Logout
             </a>
-            <a class="hub__nav__link" id="register-login__btn" href="./login.php">
+            <?php
+            if(isset($_SESSION['username'])) { echo
+            "<a class="hub__nav__link" id="register-login__btn" href="./login.php">
                 Login
-            </a>
+            </a>";
+            }
+            ?>
              <a class="nav__link" id="create__room__btn" href="./main/lobby.html">
                  進入大廳
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
