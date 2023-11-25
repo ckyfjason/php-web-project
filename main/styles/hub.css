@@ -109,6 +109,13 @@ a {
   padding-bottom: 1px;
 }
 
+.nav__link:hover {
+  color: #e6e4e4;
+  text-decoration: none;
+  border-color: #5105ca;
+  transition: all 0.3s ease-in-out;
+}
+
 .hub__nav__link {
   color: #ffffff;
   display: block;
@@ -120,20 +127,12 @@ a {
 }
 
 .hub__nav__link:hover {
-  color: #fff;
+  color: #e6e4e4;
   text-decoration: none;
-  border-bottom: 1px solid #5105ca;
+  border-color: #5105ca;
   /*padding: 0.2em 0.2em;*/
   transition: all 0.3s ease-in-out;
 }
-
-.nav__link:hover {
-  color: rgb(230, 228, 228);
-  text-decoration: none;
-  border-color: #5105ca;
-  transition: all 0.3s ease-in-out;
-}
-
 
 #create__room__btn { /*畫面上方創建房間標題欄按鈕*/
   display: block;
