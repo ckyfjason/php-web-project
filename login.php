@@ -49,12 +49,12 @@ if (isset($_POST['username'])) {
         } else {
             echo "<div class='form'>
                   <h3>用戶名稱或密碼不正確。</h3>
-                  <br/>點擊這裡<a href='login.php'>登入</a></div>";
+                  <br/>點擊這裡<a href='login.php'>重新登入</a></div>";
         }
     } else {
         echo "<div class='form'>
               <h3>用戶名稱不存在。</h3>
-              <br/>點擊這裡<a href='login.php'>登入</a></div>";
+              <br/>點擊這裡<a href='login.php'>重新登入</a></div>";
     }
 } else {
 ?>
