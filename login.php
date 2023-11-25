@@ -38,9 +38,10 @@ if (isset($_POST['username'])) {
         $hashedPassword = $row['password'];
         if (password_verify($password, $hashedPassword)) {
             $_SESSION['username'] = $username;
-            echo '<script type="text/javascript">';
-            echo 'window.location.href = "index.php";';
-            echo '</script>';
+            echo "<div class='form'>
+                <h3>登入成功。</h3>";               
+                "<h3>歡迎回來, ".$_SESSION['username']."</h3>"
+                "<br/>點擊這裡<a href='login.php'>登入</a></div>";
         } else {
             echo "<div class='form'>
                   <h3>用戶名稱或密碼不正確。</h3>
