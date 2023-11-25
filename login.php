@@ -1,12 +1,5 @@
 <?php
     session_start();
-    if(!empty($_SESSION['username']) ) {
-        //header('Location: index.php');
-        echo "<div class='form'>
-                  <h3>你已登入。</h3>
-                  <br/>點擊這裡<a href='index.php'>返回</a></div>";
-        exit();
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +9,14 @@
 </head>
 <body>
 <?php
+if(!empty($_SESSION['username']) ) {
+    //header('Location: index.php');
+    echo "<div class='form'>
+              <h3>你已登入。</h3>
+              <br/>點擊這裡<a href='index.php'>返回</a></div>";
+    exit();
+}    
+
 $serverName = "streamweb-dbserver.database.windows.net";
 $username = "ckyfjason";
 $password = "Database@password";
