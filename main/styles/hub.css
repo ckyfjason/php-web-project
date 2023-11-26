@@ -137,10 +137,10 @@ a {
   color: #ffffff;
   display: block;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 1000;
   text-decoration: none;
   border-bottom: 2px solid transparent;
-  /*padding-bottom: 1px;*/
+  padding-bottom: 1px;
 }
 
 #create__room__btn { /*畫面上方創建房間標題欄按鈕*/
