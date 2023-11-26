@@ -133,7 +133,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-#login__imformation {
+.login__imformation {
   color: #ffffff;
   display: block;
   font-size: 16px;

@@ -34,7 +34,7 @@
                 Login
                 </a>';
             } else { echo //當用已登入時
-                '<a id="login__imformation"> Hi, '. $_SESSION['username'] .'!</a>
+                '<a class="login__imformation"> Hi, '. $_SESSION['username'] .'!</a>
                 <a class="hub__nav__link" href="./logout.php">
                 Logout
                 </a>';
