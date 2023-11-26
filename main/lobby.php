@@ -15,7 +15,6 @@
 <body>
 <?php
 if(empty($_SESSION['username']) ) {
-    //header('Location: index.php');
     echo "<div class='form' style='width: 300px; margin: 0 auto;'>
               <h3>你還沒登入。</h3>
               <br/>給我回去，<a href='../index.php'>返回</a></div>";
@@ -35,15 +34,15 @@ if(empty($_SESSION['username']) ) {
         <div id="nav__links">
         <?php
             if(empty($_SESSION['username']) ) { echo//當用戶沒有登入時
-                '<a class="hub__nav__link" href="../registration.php">
+                '<a id="hub__nav__link" href="../registration.php">
                 Register
                 </a>
-                <a class="hub__nav__link" href="../login.php">
+                <a id="hub__nav__link" href="../login.php">
                 Login
                 </a>';
             } else { echo //當用已登入時
-                '<a class="hub__nav__link"> Hi, '. $_SESSION['username'] .'!</a>
-                <a class="hub__nav__link" href="./logout.php">
+                '<a id="login__imformation"> Hi, '. $_SESSION['username'] .'!</a>
+                <a id="hub__nav__link" href="./logout.php">
                 Logout
                 </a>';
             }
