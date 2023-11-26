@@ -116,7 +116,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-#hub__nav__link {
+.hub__nav__link {
   color: #ffffff;
   display: block;
   font-size: 16px;
@@ -126,7 +126,7 @@ a {
   padding-bottom: 1px;
 }
 
-#hub__nav__link:hover {
+.hub__nav__link:hover {
   color: #e6e4e4;
   text-decoration: none;
   border-color: #5105ca;
