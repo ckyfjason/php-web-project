@@ -212,6 +212,7 @@ a.login__data {
 .hero__section__img img {
   width: 100%;
   height: auto;
+  display: flex;
 }
 
 @media (max-width: 640px) {
