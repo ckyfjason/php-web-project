@@ -133,11 +133,11 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.login__imformation {
+.login__data {
   color: #ffffff;
   display: block;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   padding-bottom: 1px;
