@@ -26,10 +26,11 @@ a:hover{
 .form{
      width: 222px;
      margin: 0 auto;
+     margin-top: 20vh;
 }
 input[type='text'], input[type='email'],
 input[type='password'] {
-     width: 200px;
+     width: 100%;
      border-radius: 2px;
      border: 1px solid #CCC;
      padding: 10px;
