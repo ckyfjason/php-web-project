@@ -36,8 +36,7 @@ if ($conn) {
         // 引入使用者填的資料
         $roomid = $_POST['room'];
 
-        $query = "UPDATE users SET roomid VALUES ?";        
-                $params = $roomid; //
+        $query = "UPDATE users SET roomid=? WHERE username='$_SESSION['username']'";        
                 $stmt = sqlsrv_query($conn, $query, $roomid);
                 if ($stmt) {
                         
