@@ -66,7 +66,7 @@ if(empty($_SESSION['username']) ) {
  
                 <div class="form__field__wrapper">
                     <label>暱稱</label>
-                    <div name="name">TEST</div>
+                    <div name="name"><?phpecho $_SESSION['username'];?></div>
                     <!--<input type="text" name="name" required placeholder="在此輸入你的暱稱..." />-->
                 </div>
  
