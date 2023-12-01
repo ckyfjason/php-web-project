@@ -18,7 +18,8 @@ let membersHereBeforeMe = [];
 let currentRoomData = {}
 
 let joinRoomInit = async () => {
-    let response = await fetch(`https://mumble2.herokuapp.com/get_rtm_token?uid=${uid}`)
+    let response = await fetch(`https://streamweb.azurewebsites.net/get_rtm_token?uid=${uid}`)
+    //let response = await fetch(`https://mumble2.herokuapp.com/get_rtm_token?uid=${uid}`)
     let data = await response.json()
     token = await data.token
     APP_ID = await data.APP_ID
