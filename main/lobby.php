@@ -36,9 +36,9 @@ if ($conn) {
         // 引入使用者填的資料
         $roomid = $_POST['room'];
 
-        $query = "INSERT into users (roomid) VALUES (?)";        
-                $params = array($roomid);
-                $stmt = sqlsrv_query($conn, $query, $params);
+        $query = "UPDATE users SET roomid VALUES ?";        
+                $params = $roomid; //
+                $stmt = sqlsrv_query($conn, $query, $roomid);
                 if ($stmt) {
                         
                 } else {
