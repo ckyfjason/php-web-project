@@ -49,8 +49,9 @@ let handleMemberLeft = async (MemberId) => {
         // 將其他成員從頻道中移除
         for (let i = 0; i < currentMembers.length; i++) {
             if (currentMembers[i] !== MemberId) {
-                // 讓其他成員離開頻道
-                removeMemberFromDom(currentMembers[i])
+                // 將其他成員重定向至 lobby.php
+                window.location = 'lobby.php';
+                break;
             }
         }
     }
