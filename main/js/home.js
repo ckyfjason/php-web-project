@@ -1,7 +1,7 @@
 // let APP_ID
-let APP_ID;
-let uid = sessionStorage.getItem('uid')
-if(!uid){
+let APP_ID
+let uid = sessionStorage.getItem('uid') 
+if(!uid){ //設置?房間?的UID
     uid = String(Math.floor(Math.random() * 10000))
     sessionStorage.setItem('uid', uid)
 }
