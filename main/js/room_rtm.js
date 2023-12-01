@@ -40,11 +40,19 @@ let handleMemberLeft = async (MemberId) => {
     let members = await channel.getMembers()
     updateMemberTotal(members)
 
-    if(MemberId == hostmember) {
-        await channel.leave()
-        await rtmClient.logout()
-    }
+    // 檢查是否是主持人離開，如果是，進行其他成員的處理
+    if (MemberId === hostmember) {
+        // 取得目前的成員列表
+        let currentMembers = await channel.getMembers()
 
+        // 將其他成員從頻道中移除
+        for (let i = 0; i < currentMembers.length; i++) {
+            if (currentMembers[i] !== MemberId) {
+                // 讓其他成員離開頻道
+                await channel.removeMember(currentMembers[i])
+            }
+        }
+    }
 }
 
 let removeMemberFromDom = async (MemberId) => {
