@@ -1,17 +1,8 @@
 
 let form = document.getElementById('lobby__form')
-
-fetch('login.php')
-  .then(response => response.json())
-  .then(data => {
-    const displayName = data.username;
-    // 在這裡使用 username 變數做其他操作
-  })
-  .catch(error => console.error('發生錯誤：', error));
-
 /*當你從room返回至lobby時，因為剛才已經設定名字存在，會幫你保存名字*/
 //
-//let displayName = sessionStorage.getItem('display_name')
+let displayName = sessionStorage.getItem('display_name') //原本設定displayname
 if(displayName){
     form.name.value = displayName
 }  
