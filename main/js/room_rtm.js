@@ -42,6 +42,7 @@ let handleMemberLeft = async (MemberId) => {
 
     // 檢查是否是主持人離開，如果是，進行其他成員的處理
     if (MemberId === hostmember) {
+        addBotMessageToDom(`11 離開了直播間。`)
         // 取得目前的成員列表
         let currentMembers = await channel.getMembers()
 
