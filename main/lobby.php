@@ -91,8 +91,6 @@ if(empty($_SESSION['username']) ) {
     
 </body>
 <script type="text/javascript" src="js/lobby.js"></script>
-
-// 將 PHP 變數的值傳遞給 JavaScript 的 sessionStorage
 <script>
 sessionStorage.setItem("display_name", "456hi")
 </script>
