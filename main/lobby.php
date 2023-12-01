@@ -37,9 +37,9 @@ if ($conn) {
         $roomid = $_POST['room'];
         $username = $_SESSION['username'];
 
-        $query = "UPDATE users SET roomid=500 WHERE username=?"; 
+        $query = "UPDATE users SET roomid=? WHERE username='B11002132'"; 
         //$params = array($roomid, $username);
-        $params = array($username);
+        $params = array($roomid);
 
         $stmt = sqlsrv_query($conn, $query, $params);
         if ($stmt) {
