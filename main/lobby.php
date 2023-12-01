@@ -35,14 +35,17 @@ if ($conn) {
     if (isset($_POST['submit'])) {
         // 引入使用者填的資料
         $roomid = $_POST['room'];
+        $username = $_SESSION['username'];
 
-        $query = "UPDATE users SET roomid=? WHERE username='$_SESSION['username']'";        
-                $stmt = sqlsrv_query($conn, $query, $roomid);
-                if ($stmt) {
-                        
-                } else {
-                die(print_r(sqlsrv_errors(), true));
-                }
+        $query = "UPDATE users SET roomid=? WHERE username=?";  // 修改这里的 SQL 查询语句
+        $params = array($roomid, $username);
+
+        $stmt = sqlsrv_query($conn, $query, $params);
+        if ($stmt) {
+            // 更新成功后的操作
+        } else {
+            die(print_r(sqlsrv_errors(), true));
+        }
     }
 }    
 
