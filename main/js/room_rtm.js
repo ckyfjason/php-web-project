@@ -1,11 +1,19 @@
+let host = 0;
 let handleMemberJoined = async (MemberId) => { /*當有member加入時*/ 
     console.log('A new member has joined the room:', MemberId)
     addMemberToDom(MemberId) /*添加member至member list的副程式*/
 
     let members = await channel.getMembers()
+
+    
+
     updateMemberTotal(members) /*更新總人數的副程式*/
 
     let {name} = await rtmClient.getUserAttributesByKeys(MemberId, ['name'])
+    if(members==1&&host==0) {
+        host=1;
+        let hostmember = MemberId;
+    }
     addBotMessageToDom(`${name} 來到了直播間! 👋`) /*發送機器人席的副程式*/ 
 }
 
@@ -31,6 +39,12 @@ let handleMemberLeft = async (MemberId) => {
 
     let members = await channel.getMembers()
     updateMemberTotal(members)
+
+    if(MemberId == hostmember) {
+        await channel.leave()
+        await rtmClient.logout()
+    }
+
 }
 
 let removeMemberFromDom = async (MemberId) => {
