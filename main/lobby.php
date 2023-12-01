@@ -37,8 +37,8 @@ if ($conn) {
         $roomid = $_POST['room'];
         $username = $_SESSION['username'];
 
-        $query = "UPDATE users SET roomid=? WHERE username=?";  // 修改这里的 SQL 查询语句
-        $params = array($roomid, $username);
+        $query = "UPDATE users SET roomid=? WHERE username=?"; 
+        $params = array($_POST['room'], $_SESSION['username']);
 
         $stmt = sqlsrv_query($conn, $query, $params);
         if ($stmt) {
