@@ -33,7 +33,6 @@ if(empty($_SESSION['username']) ) {
 
 if ($conn) {
     if (isset($_POST['submit'])) {
-    // 引入使用者填的資料
         $roomid = $_POST['room'];
         $username = $_SESSION['username'];
 
@@ -96,7 +95,6 @@ if ($conn) {
                 <div class="form__field__wrapper">
                     <label>暱稱</label>
                     <div name="name"><?php echo $_SESSION['username']; ?></div>
-                    <!--<input type="text" name="name" required placeholder="在此輸入你的暱稱..." />-->
                 </div>
  
                 <div class="form__field__wrapper">
@@ -119,7 +117,7 @@ if ($conn) {
 <script type="text/javascript" src="js/lobby.js"></script>
 
 <?php
-// 如果 $_SESSION['username'] 已經設定
+// 把$_SESSION['username']丟到seessionStorage的元素當中
 if(isset($_SESSION['username'])) {
     echo '<script>';
     echo 'sessionStorage.setItem("display_name", "' . $_SESSION['username'] . '");';
