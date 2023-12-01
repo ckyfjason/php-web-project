@@ -1,5 +1,15 @@
 <?php
     session_start();
+    $serverName = "streamweb-dbserver.database.windows.net";
+    $username = "ckyfjason";
+    $password = "Database@password";
+    $dbname = "streamweb-formaldb";
+
+    $conn = sqlsrv_connect($serverName, array(
+        "Database" => $dbname,
+        "UID" => $username,
+        "PWD" => $password
+    ));
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +30,23 @@ if(empty($_SESSION['username']) ) {
               <br/>給我回去，<a href='../index.php'>返回</a></div>";
     exit();
 }
+
+if ($conn) {
+    if (isset($_POST['submit'])) {
+        // 引入使用者填的資料
+        $roomid = $_POST['room'];
+
+        $query = "INSERT into users (roomid) VALUES (?)";        
+                $params = array($roomid);
+                $stmt = sqlsrv_query($conn, $query, $params);
+                if ($stmt) {
+                        
+                } else {
+                die(print_r(sqlsrv_errors(), true));
+                }
+    }
+}    
+
 ?> 
     <header id="nav">
        <div class="nav--list">
