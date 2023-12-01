@@ -91,7 +91,14 @@ if(empty($_SESSION['username']) ) {
     
 </body>
 <script type="text/javascript" src="js/lobby.js"></script>
-<script>
-sessionStorage.setItem("display_name", "456hi")
-</script>
+
+<?php
+// 如果 $_SESSION['username'] 已經設定
+if(isset($_SESSION['username'])) {
+    echo '<script>';
+    echo 'sessionStorage.setItem("username", "' . $_SESSION['username'] . '");';
+    echo '</script>';
+}
+?>
+
 </html>
