@@ -66,7 +66,7 @@ if(empty($_SESSION['username']) ) {
  
                 <div class="form__field__wrapper">
                     <label>暱稱</label>
-                    <div name="name"><?phpecho $_SESSION['username'];?></div>
+                    <div name="name"><?phpecho "$_SESSION['username']";?></div>
                     <!--<input type="text" name="name" required placeholder="在此輸入你的暱稱..." />-->
                 </div>
  
@@ -75,10 +75,6 @@ if(empty($_SESSION['username']) ) {
                     <input type="text" name="room"  placeholder="在此輸入房間編號..." />
                 </div>
 
-                <!--<div class="form__field__wrapper">
-                    <label>房間密碼</label>
-                    <input type="text" name="password"  placeholder="在此輸入房間編號..." />
-                </div>-->
  
                  <div class="form__field__wrapper">
                      <button type="submit">創建 / 加入
