@@ -77,7 +77,6 @@ sqlsrv_close($conn);
 </body>
 <script>
   // 將 PHP 中的 $_SESSION['username'] 值賦予 JavaScript 變數
-  let sessionStorage.getItem('display_name') = "<?php echo $_SESSION['username']; ?>";
-  // 在這裡使用 username 變數做其他操作
+  sessionStorage.setItem('display_name', <?phpecho $_SESSION['username'];?>);
 </script>
 </html>
