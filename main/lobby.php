@@ -36,11 +36,10 @@ if ($conn) {
         // 引入使用者填的資料
         $roomid = $_POST['room'];
         $username = $_SESSION['username'];
-
-        $query = "UPDATE users SET roomid=? WHERE username='B11002132'"; 
-        //$params = array($roomid, $username);
-        $params = array($roomid);
-
+    
+        $query = "UPDATE users SET roomid=? WHERE username=?";
+        $params = array($roomid, $username);
+    
         $stmt = sqlsrv_query($conn, $query, $params);
         if ($stmt) {
             // 更新成功后的操作
@@ -107,7 +106,7 @@ if ($conn) {
 
  
                  <div class="form__field__wrapper">
-                     <button type="submit" name="submit">創建 / 加入
+                     <input type="submit" name="submit" value="創建 / 加入" />
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
                     </button>
                  </div>
