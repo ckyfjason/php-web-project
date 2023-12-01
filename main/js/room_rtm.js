@@ -49,7 +49,7 @@ let handleMemberLeft = async (MemberId) => {
         for (let i = 0; i < currentMembers.length; i++) {
             if (currentMembers[i] !== MemberId) {
                 // 讓其他成員離開頻道
-                await channel.removeMember(currentMembers[i])
+                removeMemberFromDom(currentMembers[i])
             }
         }
     }
