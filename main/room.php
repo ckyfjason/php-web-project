@@ -11,12 +11,11 @@
         "PWD" => $password
     ));
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roomid'])) {
-        // 檢查傳遞的 roomid
-        $roomid = $_POST['roomid'];
+    if(isset($_COOKIE['mytestvalue'])) {
+        $roomid = $_COOKIE['mytestvalue'];
+        // 現在您可以使用$myVar變數了
     }
 
-    $roomid = $_POST['roomid'];
     $username = $_SESSION['username'];
     $query2 = "UPDATE users SET roomid=? WHERE username=?";
     $params = array($roomid, $username);
