@@ -113,11 +113,11 @@ if(isset($_SESSION['username'])) {
     echo '</script>';
 }
 if (isset($_POST['submit'])) {
-        $roomid = $_POST['room'];
+        $_SESSION['roomid'] =  $_POST['room'];
         $username = $_SESSION['username'];
 
         $query2 = "UPDATE users SET roomid=? WHERE username=?";
-        $params = array($roomid, $username);
+        $params = array($_SESSION['roomid'], $username);
 
         $stmt = sqlsrv_query($conn, $query2, $params);
         if ($stmt) {
