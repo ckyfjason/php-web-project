@@ -11,10 +11,10 @@
         "PWD" => $password
     ));
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roomid'])) {
+    /*if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roomid'])) {
         $roomid = $_POST['roomid'];
-    }
-    //$roomid = $_POST['roomid'];
+    }*/
+    $roomid = $_POST['roomid'];
     $username = $_SESSION['username'];
     $query2 = "UPDATE users SET roomid=? WHERE username=?";
     $params = array($roomid, $username);
