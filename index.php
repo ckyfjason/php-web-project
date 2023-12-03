@@ -226,6 +226,7 @@
         $query3 = "UPDATE users SET roomid=? WHERE username=?";
         $params = array(${roomId}, $username);
         $stmt = sqlsrv_query($conn, $query3, $params);
+        //
         ?>
     }
 </script>
