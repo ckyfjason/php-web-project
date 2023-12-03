@@ -220,9 +220,9 @@
 <script type="text/javascript" src="./main/js/agora-rtm-sdk-1.4.4.js"></script>
 <script>
     function redirectToRoom(roomId) {
-        window.location = `room.php?room=${roomId}`;
         var mytestvalue = ${roomId};
         document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
+        window.location = `main/room.php?room=${roomId}`;
     }
 </script>
 <!--<script src='./main/js/home.js'></script>-->
