@@ -36,7 +36,7 @@ if ($conn) {
         $roomid = $_POST['room'];
         $username = $_SESSION['username'];
 
-        $query2 = "UPDATE users SET roomid=? WHERE username=?";
+        $query2 = "UPDATE users SET roomid=? WHERE username='?'";
         $params = array($roomid, $username);
 
         $stmt = sqlsrv_query($conn, $query2, $params);
@@ -99,7 +99,7 @@ if ($conn) {
  
                 <div class="form__field__wrapper">
                     <label>房間編號</label>
-                    <input type="text" name="room"  placeholder="在此輸入房間編號..." />
+                    <input type="text" name="room"  placeholder="在此輸入房間編號(僅限數字)..." />
                 </div>
 
  
