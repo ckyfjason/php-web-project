@@ -107,8 +107,7 @@ if(isset($_SESSION['username'])) {
     echo 'sessionStorage.setItem("display_name", "' . $_SESSION['username'] . '");';
     echo '</script>';
 }
-if ($conn) {
-    if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
         /*$roomid = $_POST['room'];
         $username = $_SESSION['username'];
 
@@ -121,9 +120,8 @@ if ($conn) {
         } else {
             die(print_r(sqlsrv_errors(), true));
         }*/
-        echo "<script>alert('這是由PHP生成的JavaScript警告');</script>";
-    }
-}    
+    echo "<script>alert('這是由PHP生成的JavaScript警告');</script>";
+}   
 ?>
 
 </html>
