@@ -18,7 +18,8 @@ if(displayName){
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     let inviteCode = e.target.room.value
-    sessionStorage.setItem('abcdefg', inviteCode)
+    var mytestvalue = inviteCode;
+    document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
     if (!inviteCode || containsNonDigits(inviteCode)) {
         inviteCode = String(Math.floor(Math.random() * 10000));
     }

@@ -2,8 +2,6 @@ let messagesContainer = document.getElementById('messages');
 messagesContainer.scrollTop = messagesContainer.scrollHeight; /*將[id為message的元素]的垂直捲動位置(scrollTop)設定為[id為message的元素]
 的完整高度，也就是會滾動到最底部*/ 
 
-var mytestvalue = sessionStorage.getItem('abcdefg');
-document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
 
 const memberContainer = document.getElementById('members__container');
 const memberButton = document.getElementById('members__button');
