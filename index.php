@@ -221,12 +221,8 @@
 <script>
     function redirectToRoom(roomId) {
         window.location = `room.php?room=${roomId}`;
-        <?php
-        $username = $_SESSION['username'];
-        $query3 = "UPDATE users SET roomid=? WHERE username=?";
-        $params = array(${roomId}, $username);
-        $stmt = sqlsrv_query($conn, $query3, $params);
-        ?>
+        var mytestvalue = ${roomId};
+        document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
     }
 </script>
 <!--<script src='./main/js/home.js'></script>-->
