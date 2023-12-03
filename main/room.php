@@ -10,17 +10,19 @@
         "UID" => $username,
         "PWD" => $password
     ));
-
+    if(isset($_COOKIE['mytestvalue'])) {
         $roomid = $_COOKIE['mytestvalue'];
+        // 現在您可以使用$myVar變數了
+    }
 
     $username = $_SESSION['username'];
-    $query5 = "UPDATE users SET roomid=? WHERE username=?";
+    $query2 = "UPDATE users SET roomid=? WHERE username=?";
     $params = array($roomid, $username);
 
-    $stmt = sqlsrv_query($conn, $query5, $params);
+    $stmt = sqlsrv_query($conn, $query2, $params);
     if ($stmt) {
-        // 更新成功后的操作
-    } 
+            
+    }
 }
 
 ?>

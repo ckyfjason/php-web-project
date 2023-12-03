@@ -25,6 +25,9 @@ form.addEventListener('submit', (e) => {
         mytestvalue = inviteCode;
         document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
     }
+    /*if(!inviteCode||containsChineseCharacters(inviteCode)){
+        inviteCode = String(Math.floor(Math.random() * 10000))
+    }*/
     
     
     window.location = `room.php?room=${inviteCode}`
