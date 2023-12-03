@@ -109,7 +109,7 @@ if(isset($_SESSION['username'])) {
 }
 if ($conn) {
     if (isset($_POST['submit'])) {
-        $roomid = $_POST['room'];
+        /*$roomid = $_POST['room'];
         $username = $_SESSION['username'];
 
         $query2 = "UPDATE users SET roomid=? WHERE username=?";
@@ -120,7 +120,8 @@ if ($conn) {
             // 更新成功后的操作
         } else {
             die(print_r(sqlsrv_errors(), true));
-        }
+        }*/
+        echo "<script>alert('這是由PHP生成的JavaScript警告');</script>";
     }
 }    
 ?>
