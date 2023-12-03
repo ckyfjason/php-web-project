@@ -92,7 +92,7 @@
                 
                     // 列出每一行的資料
                     foreach ($row as $key => $value) {
-                        echo $value . "<br>"; // 這裡將每個欄位名稱和對應的值輸出
+                        echo $value; //. "<br>"; 這裡將每個欄位名稱和對應的值輸出
                     }
                     echo "<br>";
                 }
