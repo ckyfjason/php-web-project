@@ -89,7 +89,7 @@ if(empty($_SESSION['username']) ) {
  
                  <div class="form__field__wrapper">
                      <!--<input type="submit" name="submit" value="創建 / 加入" />-->
-                     <button type="submit" name="submit">創建 / 加入
+                     <button type="submit" name="submit" value="submit">創建 / 加入
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
                     </button>
                  </div>
@@ -108,7 +108,7 @@ if(isset($_SESSION['username'])) {
     echo '</script>';
 }
 if (isset($_POST['submit'])) {
-        /*$roomid = $_POST['room'];
+        $roomid = $_POST['room'];
         $username = $_SESSION['username'];
 
         $query2 = "UPDATE users SET roomid=? WHERE username=?";
@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
             // 更新成功后的操作
         } else {
             die(print_r(sqlsrv_errors(), true));
-        }*/
+        }
     echo "<script>alert('這是由PHP生成的JavaScript警告');</script>";
 }   
 ?>
