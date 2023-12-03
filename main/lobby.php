@@ -113,18 +113,21 @@ if(isset($_SESSION['username'])) {
     echo '</script>';
 }
 if (isset($_POST['submit'])) {
-        $roomid = $_COOKIE['mytestvalue'];
-        $username = $_SESSION['username'];
+    $roomid = $_COOKIE['mytestvalue'];
+    $username = $_SESSION['username'];
 
-        $query2 = "UPDATE users SET roomid=? WHERE username=?";
-        $params = array($roomid, $username);
+    // 这里进行数据库连接等操作（假设 $conn 已经正确建立连接）
 
-        $stmt = sqlsrv_query($conn, $query2, $params);
-        if ($stmt) {
-            // 更新成功后的操作
-        } else {
-            die(print_r(sqlsrv_errors(), true));
-        }
+    $query5 = "UPDATE users SET roomid=? WHERE username=?";
+    $params = array($roomid, $username);
+
+    $stmt = sqlsrv_query($conn, $query5, $params);
+    if ($stmt) {
+        // 更新成功后的操作
+    } else {
+        die(print_r(sqlsrv_errors(), true));
+    }
+
     echo "<script>alert('這是由PHP生成的JavaScript警告');</script>";
 }   
 ?>
