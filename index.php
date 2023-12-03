@@ -103,7 +103,7 @@
                     // $row 變數包含了每一行的資料，這裡使用 SQLSRV_FETCH_ASSOC 模式來取得關聯陣列形式的結果
                     // 列出每一行的資料
                     foreach ($row as $key => $value) { 
-                        $query2 = "SELECT username FROM users WHERE roomid = ". $value .";"
+                        $query2 = "SELECT username FROM users WHERE roomid = $value;"
                         $test2 = sqlsrv_query($conn, $query2, NULL);
 
                         echo "<div class='room__content'>
