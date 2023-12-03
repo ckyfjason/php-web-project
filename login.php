@@ -1,10 +1,5 @@
 <?php
     session_start();
-    if($_SESSION['username']) {
-        header("Location: index.php");
-        exit();
-    }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +10,6 @@
 <body>
 <?php
 if(!empty($_SESSION['username']) ) {
-    header('Location: index.php');
     echo "<div class='form'>
               <h3>你已登入。</h3>
               <br/>點擊這裡<a href='index.php'>返回</a></div>";
