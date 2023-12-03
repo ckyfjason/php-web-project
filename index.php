@@ -46,19 +46,20 @@
              </a>
          </div>
      </header> 
-     
+
+     <section class="hero__section">
+            <h2>Capstone<br>Project</h2>
+            <div class="hero__section__img">
+                <img style="max-height: 550px;object-fit: contain;" src="./images/img.PNG">
+            </div>
+    </section>
     
     
 
     
 
     <main >
-        <section class="hero__section">
-            <h2>Capstone<br>Project</h2>
-            <div class="hero__section__img">
-                <img style="max-height: 550px;object-fit: contain;" src="./images/img.PNG">
-            </div>
-        </section>
+        
         <div class="room__container" sytles="margin-top: 100px">
             <div class="room__item">
                 <div class="room__content">
