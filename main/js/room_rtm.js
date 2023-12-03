@@ -36,25 +36,9 @@ let updateMemberTotal = async (members) => {
  
 let handleMemberLeft = async (MemberId) => {
     removeMemberFromDom(MemberId)
-
     let members = await channel.getMembers()
     updateMemberTotal(members)
 
-    // 檢查是否是主持人離開，如果是，進行其他成員的處理
-    if (MemberId === hostmember) {
-        addBotMessageToDom(`11 離開了直播間。`)
-        // 取得目前的成員列表
-        let currentMembers = await channel.getMembers()
-
-        // 將其他成員從頻道中移除
-        for (let i = 0; i < currentMembers.length; i++) {
-            if (currentMembers[i] !== MemberId) {
-                // 將其他成員重定向至 lobby.php
-                window.location = 'lobby.php';
-                break;
-            }
-        }
-    }
 }
 
 let removeMemberFromDom = async (MemberId) => {

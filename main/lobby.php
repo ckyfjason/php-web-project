@@ -10,6 +10,11 @@
         "UID" => $username,
         "PWD" => $password
     ));
+    $username = $_SESSION['username'];
+    $query2 = "UPDATE users SET roomid=? WHERE username=?";
+    $params = array(NULL, $username);
+
+    $stmt = sqlsrv_query($conn, $query2, $params);
 ?>
 <!DOCTYPE html>
 <html>

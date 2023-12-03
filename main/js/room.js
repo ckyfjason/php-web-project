@@ -1,21 +1,3 @@
-/*form.addEventListener('submit', (e) => {
-  e.preventDefault()
-  let inviteCode = e.target.room.value
-  var mytestvalue = inviteCode;
-  document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
-  if (!inviteCode || containsNonDigits(inviteCode)) {
-      inviteCode = String(Math.floor(Math.random() * 10000));
-      mytestvalue = inviteCode;
-      document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
-  }
-  /*if(!inviteCode||containsChineseCharacters(inviteCode)){
-      inviteCode = String(Math.floor(Math.random() * 10000))
-  }
-  
-  
-  window.location = `room.php?room=${inviteCode}`
-})*/
-
 let messagesContainer = document.getElementById('messages');
 messagesContainer.scrollTop = messagesContainer.scrollHeight; /*將[id為message的元素]的垂直捲動位置(scrollTop)設定為[id為message的元素]
 的完整高度，也就是會滾動到最底部*/ 

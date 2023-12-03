@@ -65,7 +65,7 @@
 
            
             <a class="nav__link" id="create__room__btn" href="lobby.php">
-                Return
+                返回大廳
                <svg id="create__room__btn__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
             </a>
         </div>
@@ -124,7 +124,6 @@
     </main>
     
 </body>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
 <script type="text/javascript" src="js/agora-rtm-sdk-1.4.4.js"></script>
 <script type="text/javascript" src="js/room.js"></script>
