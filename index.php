@@ -217,8 +217,8 @@
     
 <script>
     function redirectToRoom(roomId) {
-        var mytestvalue = ${roomId};
-        document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
+        //var mytestvalue = ${roomId};
+        //document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
         window.location = `main/room.php?room=${roomId}`;
     }
 </script>    
