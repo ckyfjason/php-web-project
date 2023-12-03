@@ -22,6 +22,8 @@ form.addEventListener('submit', (e) => {
     document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
     if (!inviteCode || containsNonDigits(inviteCode)) {
         inviteCode = String(Math.floor(Math.random() * 10000));
+        mytestvalue = inviteCode;
+        document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
     }
     /*if(!inviteCode||containsChineseCharacters(inviteCode)){
         inviteCode = String(Math.floor(Math.random() * 10000))
