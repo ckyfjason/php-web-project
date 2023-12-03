@@ -86,11 +86,16 @@
             <div class="room__item">
                 <?php
                 $query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
-                $stmt = $conn->query($query);
-            
-                // 儲存不重複結果的陣列
-                $roomIds = $stmt->fetchAll(PDO::FETCH_COLUMN);
-                echo $roomIds;
+                $test = sqlsrv_query($conn, $query, NULL);
+                while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
+                    // $row 變數包含了每一行的資料，這裡使用 SQLSRV_FETCH_ASSOC 模式來取得關聯陣列形式的結果
+                
+                    // 列出每一行的資料
+                    foreach ($row as $key => $value) {
+                        echo $key . ": " . $value . "<br>"; // 這裡將每個欄位名稱和對應的值輸出
+                    }
+                    echo "<br>";
+                }
 
                 /*<div class="room__content">
                     <p class="room__meta">
