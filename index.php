@@ -175,7 +175,7 @@
                                     <div class='room__author'>
                                         <strong class='message__author'>Hope You Joining !</strong>
                                     </div>
-                                    <a class='room__action' href='https://streamweb.azurewebsites.net/main/room.php?room=" . $roomid . "'>Join Now</a>
+                                    <button class='room__action' onclick='redirectToRoom($roomid)'>立即加入</button>
                                 </div>
                             </div>";
                         echo "<br>";
@@ -221,5 +221,10 @@
 </body>
 <script type="text/javascript" src="./main/js/AgoraRTC_N-4.11.0.js"></script>
 <script type="text/javascript" src="./main/js/agora-rtm-sdk-1.4.4.js"></script>
+<script>
+    function redirectToRoom(roomId) {
+        window.location = `room.php?room=${roomId}`;
+    }
+</script>
 <!--<script src='./main/js/home.js'></script>-->
 </html>
