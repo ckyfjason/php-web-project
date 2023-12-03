@@ -10,6 +10,7 @@
         "UID" => $username,
         "PWD" => $password
     ));
+
     if(isset($_COOKIE['mytestvalue'])) {
         $roomid = $_COOKIE['mytestvalue'];
         // 現在您可以使用$myVar變數了
@@ -23,8 +24,6 @@
     if ($stmt) {
             
     }
-}
-
 ?>
 <!DOCTYPE html>
 <html>
