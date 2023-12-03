@@ -111,9 +111,9 @@
                         <h4 class='room__title'>STREAMING IN ROOM" . $value . "</h4>
                         <div class='room__box'>
                             <div class='room__author'>
-                                <strong class='message__author'>TEST</strong>
+                                <strong class='message__author'>Hope You Joining !</strong>
                             </div>
-                            <a class='room__action' href='room-video.html'>Join Now</a>
+                            <a class='room__action' href='https://streamweb.azurewebsites.net/main/room.php?room=". $value ."'>Join Now</a>
                         </div>
                     </div>";//$value; //. "<br>"; 這裡將每個欄位名稱和對應的值輸出
                     }
