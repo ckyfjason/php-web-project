@@ -11,9 +11,6 @@
         "PWD" => $password
     ));
 
-    /*if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roomid'])) {
-        $roomid = $_POST['roomid'];
-    }*/
     $roomid = $_POST['roomid'];
     $username = $_SESSION['username'];
     $query2 = "UPDATE users SET roomid=? WHERE username=?";
@@ -122,7 +119,7 @@
     </main>
     
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
 <script type="text/javascript" src="js/agora-rtm-sdk-1.4.4.js"></script>
 <script type="text/javascript" src="js/room.js"></script>

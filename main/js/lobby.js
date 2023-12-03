@@ -29,3 +29,4 @@ form.addEventListener('submit', (e) => {
     
     window.location = `room.php?room=${inviteCode}`
 })
+ 
