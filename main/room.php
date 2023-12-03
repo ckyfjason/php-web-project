@@ -10,9 +10,9 @@
         "UID" => $username,
         "PWD" => $password
     ));
-    if(isset($_COOKIE['mytestvalue'])) {
+
         $roomid = $_COOKIE['mytestvalue'];
-    }
+
     $username = $_SESSION['username'];
     $query5 = "UPDATE users SET roomid=? WHERE username=?";
     $params = array($roomid, $username);
@@ -20,11 +20,7 @@
     $stmt = sqlsrv_query($conn, $query5, $params);
     if ($stmt) {
         // 更新成功后的操作
-    } else {
-        die(print_r(sqlsrv_errors(), true));
-    }
-
-    echo "<script>alert('這是由PHP生成的JavaScript警告');</script>";
+    } 
 }
 
 ?>
