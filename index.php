@@ -1,5 +1,23 @@
 <?php
     session_start();
+    $serverName = "streamweb-dbserver.database.windows.net";
+    $username = "ckyfjason";
+    $password = "Database@password";
+    $dbname = "streamweb-formaldb";
+
+    $conn = sqlsrv_connect($serverName, array(
+        "Database" => $dbname,
+        "UID" => $username,
+        "PWD" => $password
+    ));
+    $username = $_SESSION['username'];
+    $query2 = "UPDATE users SET roomid=? WHERE username=?";
+    $params = array(NULL, $username);
+
+    $stmt = sqlsrv_query($conn, $query2, $params);
+    if ($stmt) {
+            
+    }
 ?>
 <!DOCTYPE html>
 <html>
