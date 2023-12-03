@@ -113,6 +113,7 @@
                         while ($row2 = sqlsrv_fetch_array($test2, SQLSRV_FETCH_ASSOC)) {
                             foreach ($row2 as $key => $value2) { 
                                 echo $value2 . " ";
+                            }
                         }    
                         echo "</span>
                         </p>
