@@ -85,7 +85,7 @@
         <div class="room__container" sytles="margin-top: 100px">
             <div class="room__item">
                 <?php
-                /*$query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
+                $query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
                 $test = sqlsrv_query($conn, $query, NULL);
 
                 while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
@@ -116,14 +116,12 @@
                     </div>";
                     }
                     echo "<br>";
-                }*/
+                }
 
-                $query = "SELECT DISTINCT u.roomid, u.username
+                /*$query = "SELECT DISTINCT u.roomid, u.username
                         FROM users u
                         WHERE u.roomid IS NOT NULL";
-
                 $result = sqlsrv_query($conn, $query);
-
                 if ($result) {
                     while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
                         $roomid = $row["roomid"];
@@ -148,7 +146,7 @@
                     }
                 } else {
                     echo "沒有找到任何Room ID。<br>";
-                }
+                }*/
 
                 /*<div class="room__content">
                     <p class="room__meta">
