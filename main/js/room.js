@@ -4,7 +4,7 @@ messagesContainer.scrollTop = messagesContainer.scrollHeight; /*將[id為message
 
 var roomIdValue = sessionStorage.getItem('abcdefg'); // 假设您的值是通过 "abcdef" 键存储的
 // 使用Fetch或其他AJAX方式将值发送到PHP页面
-fetch('room.php', {
+fetch('../room.php', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
