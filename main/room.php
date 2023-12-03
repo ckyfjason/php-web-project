@@ -15,15 +15,14 @@
         $roomid = $_COOKIE['mytestvalue'];
         // 現在您可以使用$myVar變數了
     }
+        $username = $_SESSION['username'];
+        $query2 = "UPDATE users SET roomid=? WHERE username=?";
+        $params = array($_SESSION['roomid'], $username);
 
-    $username = $_SESSION['username'];
-    $query2 = "UPDATE users SET roomid=? WHERE username=?";
-    $params = array($roomid, $username);
-
-    $stmt = sqlsrv_query($conn, $query2, $params);
-    if ($stmt) {
-            
-    }
+        $stmt = sqlsrv_query($conn, $query2, $params);
+        if ($stmt) {
+            // 更新成功后的操作
+        }
 ?>
 <!DOCTYPE html>
 <html>
