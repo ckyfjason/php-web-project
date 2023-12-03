@@ -85,7 +85,7 @@
         <div class="room__container" sytles="margin-top: 100px">
             <div class="room__item">
                 <?php
-                /*$query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
+                $query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
                 $test = sqlsrv_query($conn, $query, NULL);
                 while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
                     // $row 變數包含了每一行的資料，這裡使用 SQLSRV_FETCH_ASSOC 模式來取得關聯陣列形式的結果
@@ -95,9 +95,9 @@
                         echo $value; //. "<br>"; 這裡將每個欄位名稱和對應的值輸出
                     }
                     echo "<br>";
-                }*/
+                }
 
-                $sql = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
+                /*$sql = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
                 // 執行查詢
                 $result = $conn->query($sql);
                 // 檢查結果
@@ -109,12 +109,10 @@
                         // 為每個roomid生成一個連結
                         //$link = "https://streamweb.azurewebsites.net/room.php?roomid=" . $roomid;
                         echo "Room ID: " . $roomid . "<br>";
-
-                        
                     }
                 } else {
                     echo "沒有找到任何Room ID。<br>";
-                }
+                }*/
 
                 /*<div class="room__content">
                     <p class="room__meta">
