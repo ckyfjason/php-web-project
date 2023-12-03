@@ -143,20 +143,32 @@
                 }*/
 
                 $query = "SELECT DISTINCT u.roomid, u.username
-                        FROM users u
-                        WHERE u.roomid IS NOT NULL";
+          FROM users u
+          WHERE u.roomid IS NOT NULL";
                 $result = sqlsrv_query($conn, $query);
+
                 if ($result) {
+                    $rooms = array(); // 儲存每個 roomid 對應的 usernames
+
                     while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
                         $roomid = $row["roomid"];
                         $username = $row["username"];
 
+                        // 將每個 username 放入對應的 roomid 的陣列中
+                        if (!isset($rooms[$roomid])) {
+                            $rooms[$roomid] = array();
+                        }
+                        $rooms[$roomid][] = $username;
+                    }
+
+                    // 輸出每個 roomid 對應的 usernames
+                    foreach ($rooms as $roomid => $usernames) {
                         echo "<div class='room__content'>
                                 <p class='room__meta'>
                                     <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
                                         <path d='M10.118 16.064c2.293-.529 4.428-.993 3.394-2.945-3.146-5.942-.834-9.119 2.488-9.119 3.388 0 5.644 3.299 2.488 9.119-1.065 1.964 1.149 2.427 3.394 2.945 1.986.459 2.118 1.43 2.118 3.111l-.003.825h-15.994c0-2.196-.176-3.407 2.115-3.936zm-10.116 3.936h6.001c-.028-6.542 2.995-3.697 2.995-8.901 0-2.009-1.311-3.099-2.998-3.099-2.492 0-4.226 2.383-1.866 6.839.775 1.464-.825 1.812-2.545 2.209-1.49.344-1.589 1.072-1.589 2.333l.002.619z'/>
                                     </svg>
-                                    <span>$username</span>
+                                    <span>" . implode(", ", $usernames) . "</span>
                                 </p>
                                 <h4 class='room__title'>STREAMING IN ROOM $roomid</h4>
                                 <div class='room__box'>
@@ -169,7 +181,7 @@
                         echo "<br>";
                     }
                 } else {
-                    echo "沒有找到任何Room ID。<br>";
+                    echo "沒有找到任何 Room ID。<br>";
                 }
 
                 /*<div class="room__content">
