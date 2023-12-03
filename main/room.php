@@ -1,3 +1,28 @@
+<?php
+    session_start();
+    $serverName = "streamweb-dbserver.database.windows.net";
+    $username = "ckyfjason";
+    $password = "Database@password";
+    $dbname = "streamweb-formaldb";
+
+    $conn = sqlsrv_connect($serverName, array(
+        "Database" => $dbname,
+        "UID" => $username,
+        "PWD" => $password
+    ));
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roomid'])) {
+    $roomid = $_POST['roomid']; // 从前端获取roomid的值
+
+    $username = $_SESSION['username'];
+    $query2 = "UPDATE users SET roomid=? WHERE username=?";
+    $params = array($roomid, $username);
+
+    $stmt = sqlsrv_query($conn, $query2, $params);
+    if ($stmt) {
+            
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
