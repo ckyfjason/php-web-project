@@ -85,7 +85,7 @@
         <div class="room__container" sytles="margin-top: 100px">
             <div class="room__item">
                 <?php
-                $query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
+                /*$query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
                 $test = sqlsrv_query($conn, $query, NULL);
                 while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
                     // $row 變數包含了每一行的資料，這裡使用 SQLSRV_FETCH_ASSOC 模式來取得關聯陣列形式的結果
@@ -95,6 +95,36 @@
                         echo $value; //. "<br>"; 這裡將每個欄位名稱和對應的值輸出
                     }
                     echo "<br>";
+                }*/
+
+                $sql = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
+                // 執行查詢
+                $result = $conn->query($sql);
+                // 檢查結果
+                if ($result->num_rows > 0) {
+                    // 處理每個roomid
+                    while($row = $result->fetch_assoc()) {
+                        $roomid = $row["roomid"];
+
+                        // 為每個roomid生成一個連結
+                        $link = "https://streamweb.azurewebsites.net/room.php?roomid=" . $roomid;
+                        echo "Room ID: " . $roomid . " - Link: " . $link . "<br>";
+
+                        // 獲取與此roomid相關的所有username
+                        $sql_users = "SELECT username FROM users WHERE roomid = '$roomid'";
+                        $result_users = $conn->query($sql_users);
+
+                        if ($result_users->num_rows > 0) {
+                            // 列出所有username
+                            while($user_row = $result_users->fetch_assoc()) {
+                                echo "Username: " . $user_row["username"] . "<br>";
+                            }
+                        } else {
+                            echo "此Room ID沒有用戶。<br>";
+                        }
+                    }
+                } else {
+                    echo "沒有找到任何Room ID。<br>";
                 }
 
                 /*<div class="room__content">
