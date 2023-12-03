@@ -107,21 +107,10 @@
                         $roomid = $row["roomid"];
 
                         // 為每個roomid生成一個連結
-                        $link = "https://streamweb.azurewebsites.net/room.php?roomid=" . $roomid;
-                        echo "Room ID: " . $roomid . " - Link: " . $link . "<br>";
+                        //$link = "https://streamweb.azurewebsites.net/room.php?roomid=" . $roomid;
+                        echo "Room ID: " . $roomid . "<br>";
 
-                        // 獲取與此roomid相關的所有username
-                        $sql_users = "SELECT username FROM users WHERE roomid = '$roomid'";
-                        $result_users = $conn->query($sql_users);
-
-                        if ($result_users->num_rows > 0) {
-                            // 列出所有username
-                            while($user_row = $result_users->fetch_assoc()) {
-                                echo "Username: " . $user_row["username"] . "<br>";
-                            }
-                        } else {
-                            echo "此Room ID沒有用戶。<br>";
-                        }
+                        
                     }
                 } else {
                     echo "沒有找到任何Room ID。<br>";
