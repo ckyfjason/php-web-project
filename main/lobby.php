@@ -32,7 +32,7 @@
 if(empty($_SESSION['username']) ) {
     echo "<div class='form' style='width: 300px; margin: 0 auto;'>
               <h3>你還沒登入。</h3>
-              <br/>給我回去，<a href='../index.php'>返回</a></div>";
+              <br/>請登入，<a href='../index.php'>點我返回</a></div>";
     exit();
 }
   
