@@ -87,17 +87,6 @@
                 <?php
                 /*$query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
                 $test = sqlsrv_query($conn, $query, NULL);
-                while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
-                    // $row 變數包含了每一行的資料，這裡使用 SQLSRV_FETCH_ASSOC 模式來取得關聯陣列形式的結果
-                
-                    // 列出每一行的資料
-                    foreach ($row as $key => $value) {
-                        echo $value; //. "<br>"; 這裡將每個欄位名稱和對應的值輸出
-                    }
-                    echo "<br>";
-                }*/
-                $query = "SELECT DISTINCT roomid FROM users WHERE roomid IS NOT NULL";
-                $test = sqlsrv_query($conn, $query, NULL);
 
                 while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
                     // $row 變數包含了每一行的資料，這裡使用 SQLSRV_FETCH_ASSOC 模式來取得關聯陣列形式的結果
@@ -124,12 +113,42 @@
                             </div>
                             <a class='room__action' href='https://streamweb.azurewebsites.net/main/room.php?room=". $value ."'>Join Now</a>
                         </div>
-                    </div>";//$value; //. "<br>"; 這裡將每個欄位名稱和對應的值輸出
+                    </div>";
                     }
                     echo "<br>";
-                }
+                }*/
 
-                
+                $query = "SELECT DISTINCT u.roomid, u.username
+                        FROM users u
+                        WHERE u.roomid IS NOT NULL";
+
+                $result = sqlsrv_query($conn, $query);
+
+                if ($result) {
+                    while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+                        $roomid = $row["roomid"];
+                        $username = $row["username"];
+
+                        echo "<div class='room__content'>
+                                <p class='room__meta'>
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+                                        <path d='M10.118 16.064c2.293-.529 4.428-.993 3.394-2.945-3.146-5.942-.834-9.119 2.488-9.119 3.388 0 5.644 3.299 2.488 9.119-1.065 1.964 1.149 2.427 3.394 2.945 1.986.459 2.118 1.43 2.118 3.111l-.003.825h-15.994c0-2.196-.176-3.407 2.115-3.936zm-10.116 3.936h6.001c-.028-6.542 2.995-3.697 2.995-8.901 0-2.009-1.311-3.099-2.998-3.099-2.492 0-4.226 2.383-1.866 6.839.775 1.464-.825 1.812-2.545 2.209-1.49.344-1.589 1.072-1.589 2.333l.002.619z'/>
+                                    </svg>
+                                    <span>$username</span>
+                                </p>
+                                <h4 class='room__title'>STREAMING IN ROOM $roomid</h4>
+                                <div class='room__box'>
+                                    <div class='room__author'>
+                                        <strong class='message__author'>Hope You Joining !</strong>
+                                    </div>
+                                    <a class='room__action' href='https://streamweb.azurewebsites.net/main/room.php?room=$roomid'>Join Now</a>
+                                </div>
+                            </div>";
+                        echo "<br>";
+                    }
+                } else {
+                    echo "沒有找到任何Room ID。<br>";
+                }
 
                 /*<div class="room__content">
                     <p class="room__meta">
