@@ -220,13 +220,12 @@
 <script type="text/javascript" src="./main/js/agora-rtm-sdk-1.4.4.js"></script>
 <script>
     function redirectToRoom(roomId) {
-        window.location = `main/room.php?room=${roomId}`;
+        window.location = `room.php?room=${roomId}`;
         <?php
         $username = $_SESSION['username'];
         $query3 = "UPDATE users SET roomid=? WHERE username=?";
         $params = array(${roomId}, $username);
         $stmt = sqlsrv_query($conn, $query3, $params);
-        //
         ?>
     }
 </script>
