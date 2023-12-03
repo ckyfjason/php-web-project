@@ -15,7 +15,7 @@
     //$roomid = $_POST['roomid']; // 从前端获取roomid的值
         $roomid = 89;
     }*/
-    $roomid = 89;
+    $roomid = $_POST['roomid'];
     $username = $_SESSION['username'];
     $query2 = "UPDATE users SET roomid=? WHERE username=?";
     $params = array($roomid, $username);
