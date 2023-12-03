@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!empty($_SESSION['username']) ) {
+    if($_SESSION['username']) {
         header("Location: index.php");
         exit();
     }
