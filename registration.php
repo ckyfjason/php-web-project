@@ -49,7 +49,7 @@ if ($conn) {
                 if ($stmt) {
                         echo "<div class='form'>
                         <h3>註冊成功。</h3>
-                        <br/>點擊這裡<a href='login.php'>登錄</a></div>";
+                        <a href='login.php'>點擊這裡登入</a></div>";
                 } else {
                 die(print_r(sqlsrv_errors(), true));
                 }
