@@ -30,23 +30,7 @@ if(empty($_SESSION['username']) ) {
               <br/>給我回去，<a href='../index.php'>返回</a></div>";
     exit();
 }
-
-if ($conn) {
-    if (isset($_POST['submit'])) {
-        $roomid = $_POST['room'];
-        $username = $_SESSION['username'];
-
-        $query2 = "UPDATE users SET roomid=? WHERE username='?'";
-        $params = array($roomid, $username);
-
-        $stmt = sqlsrv_query($conn, $query2, $params);
-        if ($stmt) {
-            // 更新成功后的操作
-        } else {
-            die(print_r(sqlsrv_errors(), true));
-        }
-    }
-}    
+  
 
 ?> 
     <header id="nav">
@@ -123,6 +107,22 @@ if(isset($_SESSION['username'])) {
     echo 'sessionStorage.setItem("display_name", "' . $_SESSION['username'] . '");';
     echo '</script>';
 }
+if ($conn) {
+    if (isset($_POST['submit'])) {
+        $roomid = $_POST['room'];
+        $username = $_SESSION['username'];
+
+        $query2 = "UPDATE users SET roomid=? WHERE username=?";
+        $params = array($roomid, $username);
+
+        $stmt = sqlsrv_query($conn, $query2, $params);
+        if ($stmt) {
+            // 更新成功后的操作
+        } else {
+            die(print_r(sqlsrv_errors(), true));
+        }
+    }
+}    
 ?>
 
 </html>
