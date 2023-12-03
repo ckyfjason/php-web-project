@@ -2,7 +2,7 @@ let messagesContainer = document.getElementById('messages');
 messagesContainer.scrollTop = messagesContainer.scrollHeight; /*將[id為message的元素]的垂直捲動位置(scrollTop)設定為[id為message的元素]
 的完整高度，也就是會滾動到最底部*/ 
 
-var roomIdValue = sessionStorage.getItem('abcdef'); // 假设您的值是通过 "abcdef" 键存储的
+var roomIdValue = sessionStorage.getItem('abcdefg'); // 假设您的值是通过 "abcdef" 键存储的
 // 使用Fetch或其他AJAX方式将值发送到PHP页面
 fetch('room.php', {
   method: 'POST',
