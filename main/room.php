@@ -181,6 +181,5 @@ var thing = "SOMETHING";
         })
         .fail(function(){
         })
-}
 </script>
 </html>
