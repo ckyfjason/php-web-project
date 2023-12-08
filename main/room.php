@@ -51,6 +51,10 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
+                <audio autoplay loop>
+                    <source src="music.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
         </div>
 
         <div id="nav__links">  
