@@ -39,9 +39,6 @@
 <body>
 
     <header id="nav">  <!-- 頭標欄處 -->
-        <?php
-        
-        ?>
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
                 <button id="members__button"> <!--手機?-->
                     <svg id="members__button__svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#ede0e0"><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/></svg>
@@ -53,6 +50,18 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
+                <?php
+                if (isset($_POST['update_bgm']) && $_POST['update_bgm'] == 1) {
+                    echo "
+                <a>
+                    <h3 id='logo'>
+                        <img src='./images/logo.png' alt='Site Logo'>
+                        <span>222222</span>
+                    </h3>
+                </a>
+                    ";
+                }
+                ?>
         </div>
 
         <div id="nav__links">  
@@ -136,7 +145,7 @@
 <script type="text/javascript" src="js/room_rtc.js"></script>
 <script src="jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
-document.getElementById('bgm-btn').addEventListener('click', function() {
+    document.getElementById('bgm-btn').addEventListener('click', function() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
