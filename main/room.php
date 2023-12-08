@@ -52,7 +52,7 @@
                     </h3>
                 </a>
                 <audio autoplay loop>
-                    <source src="music.mp3" type="audio/mpeg">
+                    <source src="./music.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
         </div>
