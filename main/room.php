@@ -134,7 +134,8 @@
 <script type="text/javascript" src="js/room.js"></script>
 <script type="text/javascript" src="js/room_rtm.js"></script>
 <script type="text/javascript" src="js/room_rtc.js"></script>
-<script>
+<script src="jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
 document.getElementById('bgm-btn').addEventListener('click', function() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
