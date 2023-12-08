@@ -31,8 +31,8 @@ let localScreenTracks;
 let sharingScreen = false;
 
 /*        Custom           */ 
-
-var bgmdisplay = false;
+//let 
+var bgmdisplay = 0;
 const backgroundMusic = document.getElementById('backgroundMusic');
 
 
@@ -255,15 +255,16 @@ let leaveStream = async (e) => {
 
 let toggleBGM = async (e) => {
     let button = e.currentTarget
-    if(bgmdisplay==true) {
+    if(bgmdisplay==1) {
+        bgmdisplay = 0;
         button.classList.remove('active')
         backgroundMusic.pause();
-        bgmdisplay = false;
+        
     }  
-    if(bgmdisplay==false) {
+    if(bgmdisplay==0) {
+        bgmdisplay = 1; //無效
         document.getElementById('bgm-btn').classList.add('active')
         backgroundMusic.play();
-        bgmdisplay = true;
     }
 }
 
