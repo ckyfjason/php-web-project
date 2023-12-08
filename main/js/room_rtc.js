@@ -248,7 +248,7 @@ let leaveStream = async (e) => {
 
 let toggleBGM = async (e) => {
     let button = e.currentTarget
-    var bgmdisplay = true;
+    let bgmdisplay = false;
     if(bgmdisplay) {
         document.getElementById('bgm-btn').classList.remove('active')
     }  
