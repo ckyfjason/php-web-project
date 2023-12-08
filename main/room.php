@@ -36,20 +36,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/room.css'>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("button").click(function(){
-                $.post("room.php",
-                {
-                name: "Donald Duck",
-                city: "Duckburg"
-                },
-                function(data,status){
-                alert("Data: " + data + "\nStatus: " + status);
-                });
-            });
-        });
-    </script>
+    
 </head>
 <body>
 
@@ -65,14 +52,17 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
-                <button>Send</button>
+                <button onclick="sendData()">Send</button>
                 <?php
-                // 確保收到了 POST 請求
-                if(isset($_POST['name'])) {
-                    $roomid = $_POST['roomid'];
-                    echo '收到的房间ID是：' . $roomid;
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $receivedVariable = $_POST['user_input'];
+
+                $newVariable = $receivedVariable;
+
+                // 以下是一个简单的示例输出，可以根据需求做出相应的处理
+                echo "已接收到变量并存储到 PHP 变量中：" . $newVariable;
                 } else {
-                    echo '未收到房间ID';
+                echo "无效请求";
                 }
                 ?>
         </div>
@@ -150,8 +140,20 @@
         </div>
     </main>
     
-    
-</body>
+    <script>
+        function sendData() {
+            var userInput = 10;
+
+            $.ajax({
+            type: 'POST',
+            url: 'room.php',
+            data: { user_input: userInput },
+            success: function(response) {
+                alert('已成功发送至 PHP 文件');
+            }
+            });
+        }
+    </script>
 </body>
 <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
 <script type="text/javascript" src="js/agora-rtm-sdk-1.4.4.js"></script>
