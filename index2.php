@@ -6,7 +6,7 @@
       <script>
         function sayHello(){
             $.post('hello.php',{
-                name: "Jacky"
+                name: "Jacky",
                 number: "1"
             }, function(txt){
                 $('#message').html(txt);
