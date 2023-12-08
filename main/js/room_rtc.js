@@ -246,13 +246,22 @@ let leaveStream = async (e) => {
     channel.sendMessage({text:JSON.stringify({'type':'user_left', 'uid':uid})})
 }
 
-
+let toggleBGM = async (e) => {
+    let button = e.currentTarget
+    var bgmdisplay = true;
+    if(bgmdisplay) {
+        document.getElementById('bgm-btn').classList.remove('active')
+    }  
+    if(!bgmdisplay) {
+        button.classList.add('active')
+    }
+}
 
 document.getElementById('camera-btn').addEventListener('click', toggleCamera) /*偵測按下camera-btn後要觸發的副程式*/ 
 document.getElementById('mic-btn').addEventListener('click', toggleMic) /*偵測按下mic-btn後要觸發的副程式*/ 
 document.getElementById('screen-btn').addEventListener('click', toggleScreen) /*偵測按下screen-btn後要觸發的副程式*/ 
 document.getElementById('join-btn').addEventListener('click', joinStream) /*偵測按下join-btn後要觸發的副程式*/ 
 document.getElementById('leave-btn').addEventListener('click', leaveStream) /*偵測按下leave-btn後要觸發的副程式*/ 
-
+document.getElementById('bgm-btn').addEventListener('click', leaveStream) /*偵測按下leave-btn後要觸發的副程式*/ 
 
 joinRoomInit()
