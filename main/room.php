@@ -168,13 +168,6 @@
 <script type="text/javascript" src="js/room_rtc.js"></script>
 <script type="text/javascript">
 var thing = "SOMETHING";
-
-$(function(){
-    setTimeout(doPost,5000);
-})
-
-var doPost= function(){
-    // $.post是繼承自$.ajax再包裝後的簡化函數
     $.post({ 
         url : "room.php",
         dataType: "text",
@@ -185,10 +178,8 @@ var doPost= function(){
         })
         .done(function(d){
             console.log(d);// PHP傳回值
-            setTimeout(doPost,5000);//確定有送回再執行下一個
         })
         .fail(function(){
-            setTimeout(doPost,5000);//失敗也要執行下一個
         })
 }
 </script>
