@@ -54,7 +54,7 @@
                 if(isset($_POST["act"]) && $_POST["act"]=="postsomething") {
                     $thing = $_POST["something"];
                     // ... $thing任你處置
-                    echo "....回傳什麼給前端js吧.......";
+                    echo "<span>回傳吧</span>";
                     die();
                 }
                 ?>
