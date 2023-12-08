@@ -32,7 +32,7 @@ let sharingScreen = false;
 
 /*        Custom           */ 
 
-let bgmdisplay = false;
+var bgmdisplay = false;
 const backgroundMusic = document.getElementById('backgroundMusic');
 
 
