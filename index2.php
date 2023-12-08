@@ -1,3 +1,10 @@
+<?
+if (isset($_POST["name"])) {
+    echo "Hello world , ".$_POST["name"]." your number is ". $_POST['number'] . " !";
+} else {
+    echo "Who are u?";
+}
+?>
 <html>
     <head>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
@@ -5,7 +12,7 @@
     <body>
       <script>
         function sayHello(){
-            $.post('hello.php',{
+            $.post('index2.php',{
                 name: "Jacky",
                 number: "1"
             }, function(txt){
