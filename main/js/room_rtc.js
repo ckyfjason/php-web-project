@@ -256,7 +256,7 @@ let toggleBGM = async (e) => {
         bgmdisplay = false;
     }  
     if(!bgmdisplay) {
-        button.classList.add('active');
+        document.getElementById('bgm-btn').classList.add('active')
         bgmdisplay = true;
     }
 }
