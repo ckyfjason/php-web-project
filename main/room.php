@@ -39,7 +39,7 @@
 <body>
 
     <header id="nav">  <!-- 頭標欄處 -->
-        <audio autoplay loop>
+        <audio autoplay loop  volume="0.5">
                 <source src="../music.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
         </audio>
