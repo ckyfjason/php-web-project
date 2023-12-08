@@ -39,7 +39,10 @@
 <body>
 
     <header id="nav">  <!-- 頭標欄處 -->
-        
+        <audio autoplay loop>
+                <source src="./music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+        </audio>
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
                 <button id="members__button"> <!--手機?-->
                     <svg id="members__button__svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#ede0e0"><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/></svg>
@@ -51,10 +54,6 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
-                <audio autoplay loop>
-                    <source src="./music.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
         </div>
 
         <div id="nav__links">  
