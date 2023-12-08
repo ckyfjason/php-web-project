@@ -40,7 +40,7 @@
 
     <header id="nav">  <!-- 頭標欄處 -->
         <audio autoplay loop>
-                <source src="./music.mp3" type="audio/mpeg">
+                <source src="../music.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
         </audio>
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
