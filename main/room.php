@@ -68,7 +68,7 @@
                 <button>Send</button>
                 <?php
                 // 確保收到了 POST 請求
-                if(isset($_POST['roomid'])) {
+                if(isset($_POST['name'])) {
                     $roomid = $_POST['roomid'];
                     echo '收到的房间ID是：' . $roomid;
                 } else {
