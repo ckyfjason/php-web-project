@@ -134,23 +134,22 @@
 <script type="text/javascript" src="js/room.js"></script>
 <script type="text/javascript" src="js/room_rtm.js"></script>
 <script type="text/javascript" src="js/room_rtc.js"></script>
-<?php
-echo "
 <script>
-var bgmdisplay = 0;
-const backgroundMusic = document.getElementById('backgroundMusic');
-let toggleBGM = async (e) => {" .
-    $query = "UPDATE rooms SET bgm=? WHERE roomid=?";
-    $params = array(1, 1);
+document.getElementById('bgm-btn').addEventListener('click', function() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log('更新成功');
+            } else {
+                console.error('更新失敗');
+            }
+        }
+    };
 
-    $stmt = sqlsrv_query($conn, $query, $params);
-    if ($stmt) {
-                
-    }
-. "}
-
-document.getElementById('bgm-btn').addEventListener('click', toggleBGM) /*偵測按下bgm-btn後要觸發的副程式*/ 
+    xhr.open('POST', 'update.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send('update_bgm=1'); // 要傳給 PHP 的參數或標記
+});
 </script>
-";
-?>
 </html>
