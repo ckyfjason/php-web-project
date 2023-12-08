@@ -175,7 +175,7 @@
                                         <strong class='message__author'>Hope You Joining !</strong>
                                     </div>
                                     <button class='room__action' onclick='redirectToRoom($roomid)'>立即加入</button>
-                                    <button type="submit" name="submit" value="submit">立刻加入_新版
+                                    
                                 </div>
                             </div>";
                         echo "<br>";
@@ -224,7 +224,7 @@
         window.location = `main/room.php?room=${roomId}`;
     }
 
-    document.getElementById('lobby__form').addEventListener('submit', (e) => {
+    /*document.getElementById('lobby__form').addEventListener('submit', (e) => {
     e.preventDefault()
     let inviteCode = e.target.room.value
     var mytestvalue = inviteCode;
@@ -237,7 +237,7 @@
     
     
     window.location = `room.php?room=${inviteCode}`
-})
+})*/
 
 </script>    
 </body>
