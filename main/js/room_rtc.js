@@ -262,6 +262,6 @@ document.getElementById('mic-btn').addEventListener('click', toggleMic) /*偵測
 document.getElementById('screen-btn').addEventListener('click', toggleScreen) /*偵測按下screen-btn後要觸發的副程式*/ 
 document.getElementById('join-btn').addEventListener('click', joinStream) /*偵測按下join-btn後要觸發的副程式*/ 
 document.getElementById('leave-btn').addEventListener('click', leaveStream) /*偵測按下leave-btn後要觸發的副程式*/ 
-document.getElementById('bgm-btn').addEventListener('click', leaveStream) /*偵測按下leave-btn後要觸發的副程式*/ 
+document.getElementById('bgm-btn').addEventListener('click', toggleBGM) /*偵測按下leave-btn後要觸發的副程式*/ 
 
 joinRoomInit()
