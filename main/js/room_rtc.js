@@ -31,9 +31,6 @@ let localScreenTracks;
 let sharingScreen = false;
 
 /*        Custom           */ 
-//let 
-var bgmdisplay = 0;
-const backgroundMusic = document.getElementById('backgroundMusic');
 
 
 
@@ -253,26 +250,11 @@ let leaveStream = async (e) => {
     channel.sendMessage({text:JSON.stringify({'type':'user_left', 'uid':uid})})
 }
 
-let toggleBGM = async (e) => {
-    let button = e.currentTarget
-    if(bgmdisplay==1) {
-        bgmdisplay = 0;
-        button.classList.remove('active')
-        backgroundMusic.pause();
-        
-    }  
-    if(bgmdisplay==0) {
-        bgmdisplay = 1; //無效
-        document.getElementById('bgm-btn').classList.add('active')
-        backgroundMusic.play();
-    }
-}
 
 document.getElementById('camera-btn').addEventListener('click', toggleCamera) /*偵測按下camera-btn後要觸發的副程式*/ 
 document.getElementById('mic-btn').addEventListener('click', toggleMic) /*偵測按下mic-btn後要觸發的副程式*/ 
 document.getElementById('screen-btn').addEventListener('click', toggleScreen) /*偵測按下screen-btn後要觸發的副程式*/ 
 document.getElementById('join-btn').addEventListener('click', joinStream) /*偵測按下join-btn後要觸發的副程式*/ 
 document.getElementById('leave-btn').addEventListener('click', leaveStream) /*偵測按下leave-btn後要觸發的副程式*/ 
-document.getElementById('bgm-btn').addEventListener('click', toggleBGM) /*偵測按下leave-btn後要觸發的副程式*/ 
 
 joinRoomInit()

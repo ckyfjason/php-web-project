@@ -39,7 +39,9 @@
 <body>
 
     <header id="nav">  <!-- 頭標欄處 -->
-        <audio id="backgroundMusic" src="../music.mp3" loop></audio>
+        <?php
+        
+        ?>
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
                 <button id="members__button"> <!--手機?-->
                     <svg id="members__button__svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#ede0e0"><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/></svg>
@@ -132,4 +134,18 @@
 <script type="text/javascript" src="js/room.js"></script>
 <script type="text/javascript" src="js/room_rtm.js"></script>
 <script type="text/javascript" src="js/room_rtc.js"></script>
+<?php
+echo "
+
+<script>
+var bgmdisplay = 0;
+const backgroundMusic = document.getElementById('backgroundMusic');
+let toggleBGM = async (e) => {
+
+}
+
+document.getElementById('bgm-btn').addEventListener('click', toggleBGM) /*偵測按下bgm-btn後要觸發的副程式*/ 
+</script>
+";
+?>
 </html>
