@@ -32,6 +32,9 @@ let remoteUsers = {}
 let localScreenTracks;
 let sharingScreen = false;
 
+/*        Custom           */ 
+let bgmdisplay = false;
+/**/ */
 let joinRoomInit = async () => { /*當有成員加入直播室的一些初始化*/ 
     rtmClient = await AgoraRTM.createInstance(APP_ID)
     await rtmClient.login({uid,token})
@@ -248,12 +251,13 @@ let leaveStream = async (e) => {
 
 let toggleBGM = async (e) => {
     let button = e.currentTarget
-    let bgmdisplay = false;
     if(bgmdisplay) {
         document.getElementById('bgm-btn').classList.remove('active')
+        bgmdisplay = false;
     }  
     if(!bgmdisplay) {
-        button.classList.add('active')
+        button.classList.add('active');
+        bgmdisplay = true;
     }
 }
 
