@@ -136,13 +136,18 @@
 <script type="text/javascript" src="js/room_rtc.js"></script>
 <?php
 echo "
-
 <script>
 var bgmdisplay = 0;
 const backgroundMusic = document.getElementById('backgroundMusic');
-let toggleBGM = async (e) => {
+let toggleBGM = async (e) => {" .
+    $query = "UPDATE rooms SET bgm=? WHERE roomid=?";
+    $params = array(1, 1);
 
-}
+    $stmt = sqlsrv_query($conn, $query, $params);
+    if ($stmt) {
+                
+    }
+. "}
 
 document.getElementById('bgm-btn').addEventListener('click', toggleBGM) /*偵測按下bgm-btn後要觸發的副程式*/ 
 </script>
