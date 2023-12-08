@@ -53,36 +53,11 @@
                 </a>
                 <?php
                 // 確保收到了 POST 請求
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    // 確保 act 參數存在並且不為空
-                    if (isset($_POST['act']) && !empty($_POST['act'])) {
-                        $action = $_POST['act'];
-
-                        // 根據 act 參數的值進行不同的操作
-                        if ($action === 'postsomething') {
-                            // 確保 something 參數存在並且不為空
-                            if (isset($_POST['something']) && !empty($_POST['something'])) {
-                                // 獲取從客戶端發送過來的 something 參數值
-                                $receivedSomething = $_POST['something'];
-
-                                // 在這裡你可以對 receivedSomething 做一些處理或存儲到數據庫中
-                                // 這個示例只是將收到的數據作為回應返回
-                                echo "Received and processed: " . $receivedSomething;
-                            } else {
-                                // 如果 something 參數缺失或空值，返回錯誤訊息
-                                echo "Error: 'something' parameter is missing or empty.";
-                            }
-                        } else {
-                            // 如果 act 參數不是 postsomething，返回錯誤訊息
-                            echo "Error: Invalid action specified.";
-                        }
-                    } else {
-                        // 如果缺少 act 參數，返回錯誤訊息
-                        echo "Error: 'act' parameter is missing.";
-                    }
+                if(isset($_POST['roomid'])) {
+                    $roomid = $_POST['roomid'];
+                    echo '收到的房间ID是：' . $roomid;
                 } else {
-                    // 如果不是 POST 請求，返回錯誤訊息
-                    echo "Error: This endpoint only accepts POST requests.";
+                    echo '未收到房间ID';
                 }
                 ?>
         </div>
@@ -162,20 +137,22 @@
     
     <script type="text/javascript">
         $(document).ready(function(){
-            var thing = "SOMETHING";
-            $.post({ 
-                url : "room.php",
-                dataType: "text",
-                data : { 
-                    "act": "postsomething",
-                    "something": thing 
-                }
-            })
-            .done(function(d){
-                console.log(d);// PHP傳回值
-            })
-            .fail(function(){
-                // 失敗時的處理
+            var roomid = 'YourRoomIDValue'; // 请将 'YourRoomIDValue' 替换为您的房间ID变量的实际值
+
+            // 使用 jQuery 发送 POST 请求
+            $.ajax({
+            type: 'POST',
+            url: 'room.php', // 将 'your_php_file.php' 替换为您的 PHP 文件的路径
+            data: { roomid: roomid },
+            success: function(response) {
+                // 成功发送 POST 请求后的处理
+                console.log('数据已成功发送到 PHP 文件');
+                console.log('PHP 返回的响应：', response);
+            },
+            error: function(xhr, status, error) {
+                // 发送 POST 请求失败的处理
+                console.error('发生错误：', error);
+            }
             });
         });
     </script>
