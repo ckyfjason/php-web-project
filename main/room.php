@@ -54,16 +54,13 @@
                 </a>
                 <button onclick="sendData()">Send</button>
                 <?php
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $receivedVariable = $_POST['user_input'];
 
                 $newVariable = $receivedVariable;
 
                 // 以下是一个简单的示例输出，可以根据需求做出相应的处理
                 echo "已接收到变量并存储到 PHP 变量中：" . $newVariable;
-                } else {
-                echo "无效请求";
-                }
+                
                 ?>
         </div>
 
