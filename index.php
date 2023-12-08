@@ -29,7 +29,13 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./main/styles/hub.css'>
 </head>
 <body>
-    
+    <?php
+    if(isset($_SESSION['username'])) {
+        echo '<script>';
+        echo 'sessionStorage.setItem("display_name", "' . $_SESSION['username'] . '");';
+        echo '</script>';
+    }
+    ?>
 
     <header id="nav">
         <div class="nav--list">
@@ -221,25 +227,9 @@
 <script>
     function redirectToRoom(roomId) {
         document.cookie = `mytestvalue=${roomId}; path=/`;
-        let displayName = sessionStorage.getItem('display_name')
         window.location = `main/room.php?room=${roomId}`;
     }
 
-    /*document.getElementById('lobby__form').addEventListener('submit', (e) => {
-
-    e.preventDefault()
-    let inviteCode = e.target.room.value
-    var mytestvalue = inviteCode;
-    document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
-    if (!inviteCode || containsNonDigits(inviteCode)) {
-        inviteCode = String(Math.floor(Math.random() * 10000));
-        mytestvalue = inviteCode;
-        document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
-    }
-    
-    
-    window.location = `room.php?room=${inviteCode}`
-})*/
 
 </script>    
 </body>
