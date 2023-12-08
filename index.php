@@ -221,10 +221,12 @@
 <script>
     function redirectToRoom(roomId) {
         document.cookie = `mytestvalue=${roomId}; path=/`;
+        let displayName = sessionStorage.getItem('display_name')
         window.location = `main/room.php?room=${roomId}`;
     }
 
     /*document.getElementById('lobby__form').addEventListener('submit', (e) => {
+
     e.preventDefault()
     let inviteCode = e.target.room.value
     var mytestvalue = inviteCode;
