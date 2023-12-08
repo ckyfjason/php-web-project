@@ -36,6 +36,27 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/room.css'>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var roomid = 'YourRoomIDValue'; // 请将 'YourRoomIDValue' 替换为您的房间ID变量的实际值
+
+            // 使用 jQuery 发送 POST 请求
+            $.ajax({
+            type: 'POST',
+            url: 'room.php', // 将 'your_php_file.php' 替换为您的 PHP 文件的路径
+            data: { roomid: roomid },
+            success: function(response) {
+                // 成功发送 POST 请求后的处理
+                console.log('数据已成功发送到 PHP 文件');
+                console.log('PHP 返回的响应：', response);
+            },
+            error: function(xhr, status, error) {
+                // 发送 POST 请求失败的处理
+                console.error('发生错误：', error);
+            }
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -51,6 +72,7 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
+                <button>Send an HTTP POST request to a page and get the result back</button>
                 <?php
                 // 確保收到了 POST 請求
                 if(isset($_POST['roomid'])) {
@@ -135,27 +157,7 @@
         </div>
     </main>
     
-    <script type="text/javascript">
-        $(document).ready(function(){
-            var roomid = 'YourRoomIDValue'; // 请将 'YourRoomIDValue' 替换为您的房间ID变量的实际值
-
-            // 使用 jQuery 发送 POST 请求
-            $.ajax({
-            type: 'POST',
-            url: 'room.php', // 将 'your_php_file.php' 替换为您的 PHP 文件的路径
-            data: { roomid: roomid },
-            success: function(response) {
-                // 成功发送 POST 请求后的处理
-                console.log('数据已成功发送到 PHP 文件');
-                console.log('PHP 返回的响应：', response);
-            },
-            error: function(xhr, status, error) {
-                // 发送 POST 请求失败的处理
-                console.error('发生错误：', error);
-            }
-            });
-        });
-    </script>
+    
 </body>
 </body>
 <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
