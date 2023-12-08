@@ -22,9 +22,7 @@ if(!roomId){
 
 let displayName = sessionStorage.getItem('display_name')
 
-/*if(!displayName){
-    window.location = 'index.html'
-}*/
+
 
 let localTracks = []
 let remoteUsers = {}
@@ -33,7 +31,13 @@ let localScreenTracks;
 let sharingScreen = false;
 
 /*        Custom           */ 
+
 let bgmdisplay = false;
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+
+
+
 /**/ 
 let joinRoomInit = async () => { /*當有成員加入直播室的一些初始化*/ 
     rtmClient = await AgoraRTM.createInstance(APP_ID)
@@ -253,10 +257,12 @@ let toggleBGM = async (e) => {
     let button = e.currentTarget
     if(bgmdisplay==true) {
         button.classList.remove('active')
+        backgroundMusic.pause();
         bgmdisplay = false;
     }  
     if(bgmdisplay==false) {
         document.getElementById('bgm-btn').classList.add('active')
+        backgroundMusic.play();
         bgmdisplay = true;
     }
 }
