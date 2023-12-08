@@ -23,6 +23,7 @@ form.addEventListener('submit', (e) => {
     if (!inviteCode || containsNonDigits(inviteCode)) {
         inviteCode = String(Math.floor(Math.random() * 10000));
         mytestvalue = inviteCode;
+        document.cookie = "mytestvalue=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
     }
     /*if(!inviteCode||containsChineseCharacters(inviteCode)){

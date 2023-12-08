@@ -17,7 +17,6 @@
     $query2 = "UPDATE users SET roomid=? WHERE username=?";
     $params = array(NULL, $username);
     $stmt = sqlsrv_query($conn, $query2, $params);
-    setcookie("mytestvalue", "", time() - 3600, "/");
 ?>
 <!DOCTYPE html>
 <html>
@@ -176,6 +175,7 @@
                                         <strong class='message__author'>Hope You Joining !</strong>
                                     </div>
                                     <button class='room__action' onclick='redirectToRoom($roomid)'>立即加入</button>
+                                    <button type="submit" name="submit" value="submit">立刻加入_新版
                                 </div>
                             </div>";
                         echo "<br>";
@@ -223,6 +223,22 @@
         document.cookie = `mytestvalue=${roomId}; path=/`;
         window.location = `main/room.php?room=${roomId}`;
     }
+
+    document.getElementById('lobby__form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    let inviteCode = e.target.room.value
+    var mytestvalue = inviteCode;
+    document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
+    if (!inviteCode || containsNonDigits(inviteCode)) {
+        inviteCode = String(Math.floor(Math.random() * 10000));
+        mytestvalue = inviteCode;
+        document.cookie = "mytestvalue=" + mytestvalue + "; path=/";
+    }
+    
+    
+    window.location = `room.php?room=${inviteCode}`
+})
+
 </script>    
 </body>
 <script type="text/javascript" src="./main/js/AgoraRTC_N-4.11.0.js"></script>
