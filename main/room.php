@@ -150,7 +150,7 @@ $(function(){
 var doPost= function(){
     // $.post是繼承自$.ajax再包裝後的簡化函數
     $.post({ 
-        url : "your.php",
+        url : "room.php",
         dataType: "text",
         data : { 
             "act": "postsomething",
