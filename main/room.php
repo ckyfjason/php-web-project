@@ -50,15 +50,38 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
-                <?php 
-                if(isset($_POST["act"]) && $_POST["act"]=="postsomething") {
-                    $thing = $_POST["something"];
-                    // ... $thing任你處置
-                    echo "...";
-                    die();
-                }
-                if(isset($thing)) {
-                    echo "<span>回傳吧</span>";
+                <?php
+                // 確保收到了 POST 請求
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // 確保 act 參數存在並且不為空
+                    if (isset($_POST['act']) && !empty($_POST['act'])) {
+                        $action = $_POST['act'];
+
+                        // 根據 act 參數的值進行不同的操作
+                        if ($action === 'postsomething') {
+                            // 確保 something 參數存在並且不為空
+                            if (isset($_POST['something']) && !empty($_POST['something'])) {
+                                // 獲取從客戶端發送過來的 something 參數值
+                                $receivedSomething = $_POST['something'];
+
+                                // 在這裡你可以對 receivedSomething 做一些處理或存儲到數據庫中
+                                // 這個示例只是將收到的數據作為回應返回
+                                echo "Received and processed: " . $receivedSomething;
+                            } else {
+                                // 如果 something 參數缺失或空值，返回錯誤訊息
+                                echo "Error: 'something' parameter is missing or empty.";
+                            }
+                        } else {
+                            // 如果 act 參數不是 postsomething，返回錯誤訊息
+                            echo "Error: Invalid action specified.";
+                        }
+                    } else {
+                        // 如果缺少 act 參數，返回錯誤訊息
+                        echo "Error: 'act' parameter is missing.";
+                    }
+                } else {
+                    // 如果不是 POST 請求，返回錯誤訊息
+                    echo "Error: This endpoint only accepts POST requests.";
                 }
                 ?>
         </div>
