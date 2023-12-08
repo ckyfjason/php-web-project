@@ -160,26 +160,30 @@
         </div>
     </main>
     
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var thing = "SOMETHING";
+            $.post({ 
+                url : "room.php",
+                dataType: "text",
+                data : { 
+                    "act": "postsomething",
+                    "something": thing 
+                }
+            })
+            .done(function(d){
+                console.log(d);// PHP傳回值
+            })
+            .fail(function(){
+                // 失敗時的處理
+            });
+        });
+    </script>
+</body>
 </body>
 <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
 <script type="text/javascript" src="js/agora-rtm-sdk-1.4.4.js"></script>
 <script type="text/javascript" src="js/room.js"></script>
 <script type="text/javascript" src="js/room_rtm.js"></script>
 <script type="text/javascript" src="js/room_rtc.js"></script>
-<script type="text/javascript">
-var thing = "SOMETHING";
-    $.post({ 
-        url : "room.php",
-        dataType: "text",
-        data : { 
-            "act": "postsomething",
-            "something": thing 
-            }
-        })
-        .done(function(d){
-            console.log(d);// PHP傳回值
-        })
-        .fail(function(){
-        })
-</script>
 </html>
