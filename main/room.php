@@ -50,16 +50,12 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
-                <?php
-                if (isset($_POST['update_bgm']) && $_POST['update_bgm'] == 1) {
-                    echo "
-                <a>
-                    <h3 id='logo'>
-                        <img src='./images/logo.png' alt='Site Logo'>
-                        <span>222222</span>
-                    </h3>
-                </a>
-                    ";
+                <?php 
+                if(isset($_POST["act"]) && $_POST["act"]=="postsomething") {
+                    $thing = $_POST["something"];
+                    // ... $thing任你處置
+                    echo "....回傳什麼給前端js吧.......";
+                    die();
                 }
                 ?>
         </div>
@@ -145,21 +141,29 @@
 <script type="text/javascript" src="js/room_rtc.js"></script>
 <script src="jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
-    document.getElementById('bgm-btn').addEventListener('click', function() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                console.log('更新成功');
-            } else {
-                console.error('更新失敗');
-            }
-        }
-    };
+var thing = "SOMETHING";
 
-    xhr.open('POST', 'update.php', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.send('update_bgm=1'); // 要傳給 PHP 的參數或標記
-});
+$(function(){
+    setTimeout(doPost,5000);
+})
+
+var doPost= function(){
+    // $.post是繼承自$.ajax再包裝後的簡化函數
+    $.post({ 
+        url : "your.php",
+        dataType: "text",
+        data : { 
+            "act": "postsomething",
+            "something": thing 
+            }
+        })
+        .done(function(d){
+            console.log(d);// PHP傳回值
+            setTimeout(doPost,5000);//確定有送回再執行下一個
+        })
+        .fail(function(){
+            setTimeout(doPost,5000);//失敗也要執行下一個
+        })
+};
 </script>
 </html>
