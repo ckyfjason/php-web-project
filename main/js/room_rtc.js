@@ -34,7 +34,7 @@ let sharingScreen = false;
 
 /*        Custom           */ 
 let bgmdisplay = false;
-/**/ */
+/**/ 
 let joinRoomInit = async () => { /*當有成員加入直播室的一些初始化*/ 
     rtmClient = await AgoraRTM.createInstance(APP_ID)
     await rtmClient.login({uid,token})
