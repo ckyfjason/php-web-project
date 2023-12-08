@@ -54,8 +54,11 @@
                 if(isset($_POST["act"]) && $_POST["act"]=="postsomething") {
                     $thing = $_POST["something"];
                     // ... $thing任你處置
-                    echo "<span>回傳吧</span>";
+                    echo "...";
                     die();
+                }
+                if(isset($thing)) {
+                    echo "<span>回傳吧</span>";
                 }
                 ?>
         </div>
@@ -164,6 +167,6 @@ var doPost= function(){
         .fail(function(){
             setTimeout(doPost,5000);//失敗也要執行下一個
         })
-};
+}
 </script>
 </html>
