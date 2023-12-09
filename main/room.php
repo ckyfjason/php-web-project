@@ -40,7 +40,7 @@
 </head>
 <body>
     <?
-    $query = "SELECT bgm FROM rooms WHERE roomid=?";
+    $query = "SELECT bgm FROM rooms WHERE roomid=1";
     $result = sqlsrv_query($conn, $query);
     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
     if($row) {
