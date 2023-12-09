@@ -2,11 +2,10 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST["name"])) {
         echo "Hello world, " . $_POST["name"] . "!";
-        // 如果需要返回數據給前端，可以使用 JSON 格式，例如：
-        // echo json_encode(["message" => "Hello world, " . $_POST["name"] . "!"]);
     } else {
-        // 如果沒有收到名字，你可以返回一個錯誤訊息或者其他內容
+        echo "Who are u?";
     }
+    exit; // 確保只回傳 AJAX 請求的內容，避免多餘的 HTML
 }
 ?>
 
@@ -20,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script>
         $(document).ready(function() {
             $('#sayHelloBtn').click(function() {
-                $.post('', {  // 空字符串表示向當前頁面發送 POST 請求
+                $.post('', {
                     name: "Jacky",
                     number: "1"
                 }, function(response) {
