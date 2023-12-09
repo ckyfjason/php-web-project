@@ -19,7 +19,7 @@ if (isset($_POST["name"])) {
                 number: "1"
             }, function(txt){
                 //document.getElementById('test').insertAdjacentHTML('beforeend', $('#message').html(txt))
-                $('#test').html(response);
+                $('#test').html(txt);
             });
         };
       </script>
