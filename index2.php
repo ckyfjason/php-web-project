@@ -21,7 +21,7 @@ if (isset($_POST["name"])) {
                 name: "Jacky",
                 number: "1"
             }, function(response) {
-                $('#test').text(response); // 將伺服器端的回應設置為 #test 元素的文字內容
+                $('#test').html(response); // 將伺服器端的回應設置為 #test 元素的文字內容
             });
         };
     </script>
