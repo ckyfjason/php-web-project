@@ -11,7 +11,7 @@ if (isset($_POST["name"])) {
     </head>
     <body>
       <div id='test'>
-      <div>
+      </div>
       <script>
         function sayHello(){
             $.post('index2.php',{
