@@ -45,7 +45,7 @@
     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
     if($row) {
         $bgmValue = $row["bgm"];
-        if($bgmValue ==1) {
+        if($bgmValue) {
             echo "
             <audio autoplay loop>
                 <source src='../music.mp3' type='audio/mpeg'>
