@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query2 = "UPDATE rooms SET bgm=? WHERE roomid=?";
         $params = array($_POST["bgm"], 1);
 
-        $stmt = sqlsrv_query($conn, $query2, $params);*/
+        $stmt = sqlsrv_query($conn, $query2, $params);
         echo "111";
     } else {}
     exit; // 確保只回傳 AJAX 請求的內容，避免多餘的 HTML
