@@ -20,6 +20,7 @@ if (isset($_POST["name"])) {
             }, function(txt){
                 //document.getElementById('test').insertAdjacentHTML('beforeend', $('#message').html(txt))
                 //$('#test').html(txt);
+                $('#test').text(response);
             });
         };
       </script>
