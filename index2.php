@@ -2,7 +2,7 @@
 if (isset($_POST["name"])) {
     echo "Hello world , ".$_POST["name"]." your number is ". $_POST['number'] . " !";
 } else {
-    echo "Who are u?";
+    //echo "Who are u?";
 }
 ?>
 <html>
@@ -18,8 +18,8 @@ if (isset($_POST["name"])) {
                 name: "Jacky",
                 number: "1"
             }, function(txt){
-                document.getElementById('test').insertAdjacentHTML('beforeend', $('#message').html(txt))
-                //$('#message').html(txt);
+                //document.getElementById('test').insertAdjacentHTML('beforeend', $('#message').html(txt))
+                $('#test').html(txt);
             });
         };
       </script>
