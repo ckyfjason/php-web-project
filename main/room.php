@@ -141,17 +141,14 @@
     
     <script>
         function sendData() {
-            let userInput = 10;
             $(document).ready(function() {
-                $('#sayHelloBtn').click(function() {
-                    $.post('dynamic.php', {
-                        name: "Jacky",
-                        bgm: "1"
-                    }, function(response) {
+                $.post('dynamic.php', {
+                    name: "Jacky",
+                    bgm: "1"
+                }, function(response) {
                         //$('#test').text(response); // 將伺服器端的回應設置為 id為test 元素的文字內容
-                    });
                 });
-             });
+            });
         }
     </script>
 </body>
