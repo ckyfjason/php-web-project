@@ -141,16 +141,17 @@
     
     <script>
         function sendData() {
-            var userInput = 10;
-
-            $.ajax({
-            type: 'POST',
-            url: 'room.php',
-            data: { user_input: userInput },
-            success: function(response) {
-                alert('已成功发送至 PHP 文件');
-            }
-            });
+            let userInput = 10;
+            $(document).ready(function() {
+                $('#sayHelloBtn').click(function() {
+                    $.post('dynamic.php', {
+                        name: "Jacky",
+                        bgm: "1"
+                    }, function(response) {
+                        //$('#test').text(response); // 將伺服器端的回應設置為 id為test 元素的文字內容
+                    });
+                });
+             });
         }
     </script>
 </body>
