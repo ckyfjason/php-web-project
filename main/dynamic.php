@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } 
     else if (isset($_POST["userleft"])) {
         $query2 = "UPDATE users SET roomid=? WHERE username=?";
-        $params = array(NULL, $_SESSION['username']);
-
+        //$params = array(NULL, $_SESSION['username']);
+        $params = array(NULL, 'B11002132');
         $stmt = sqlsrv_query($conn, $query2, $params);
         echo "111";
     }
