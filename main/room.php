@@ -40,11 +40,17 @@
 </head>
 <body>
     <?
-    echo "
-    <audio autoplay loop>
-        <source src='../music.mp3' type='audio/mpeg'>
-        Your browser does not support the audio element.
-    </audio>";
+    $query = "SELECT bgm FROM rooms WHERE roomid=?";
+    $result = sqlsrv_query($conn, $query);
+    $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
+    if($row) {
+        $bgmValue = $row["bgm"];
+        echo "
+            <audio autoplay loop>
+                <source src='../music.mp3' type='audio/mpeg'>
+                Your browser does not support the audio element.
+            </audio>";
+    }
     ?>
     <header id="nav">  <!-- 頭標欄處 -->
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
