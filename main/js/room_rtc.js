@@ -130,6 +130,13 @@ let handleUserPublished = async (user, mediaType) => {
 
 let handleUserLeft = async (user) => {
     delete remoteUsers[user.uid]
+    $(document).ready(function() {
+        $.post('../dynamic.php', {
+            userleft: "1"
+        }, function(response) {
+                //$('#test').text(response); // 將伺服器端的回應設置為 id為test 元素的文字內容
+        });
+    });
     let item = document.getElementById(`user-container-${user.uid}`)
     if(item){
         item.remove()

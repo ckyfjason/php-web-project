@@ -19,7 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt = sqlsrv_query($conn, $query2, $params);
         echo "111";
-    } else {}
+    } 
+    else if (isset($_POST["userleft"])) {
+        $query2 = "UPDATE users SET roomid=? WHERE username=?";
+        $params = array(NULL, $_SESSION['username']);
+
+        $stmt = sqlsrv_query($conn, $query2, $params);
+        echo "111";
+    }
     exit; // 確保只回傳 AJAX 請求的內容，避免多餘的 HTML
 }
 ?>
