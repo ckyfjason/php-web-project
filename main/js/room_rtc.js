@@ -250,11 +250,22 @@ let leaveStream = async (e) => {
     channel.sendMessage({text:JSON.stringify({'type':'user_left', 'uid':uid})})
 }
 
+function sendData() {
+    $(document).ready(function() {
+        $.post('dynamic.php', {
+            name: "Jacky",
+            bgm: "1"
+        }, function(response) {
+                //$('#test').text(response); // 將伺服器端的回應設置為 id為test 元素的文字內容
+        });
+    });
+}
 
 document.getElementById('camera-btn').addEventListener('click', toggleCamera) /*偵測按下camera-btn後要觸發的副程式*/ 
 document.getElementById('mic-btn').addEventListener('click', toggleMic) /*偵測按下mic-btn後要觸發的副程式*/ 
 document.getElementById('screen-btn').addEventListener('click', toggleScreen) /*偵測按下screen-btn後要觸發的副程式*/ 
 document.getElementById('join-btn').addEventListener('click', joinStream) /*偵測按下join-btn後要觸發的副程式*/ 
 document.getElementById('leave-btn').addEventListener('click', leaveStream) /*偵測按下leave-btn後要觸發的副程式*/ 
+document.getElementById('bgm-btn').addEventListener('click', sendData) /*偵測按下leave-btn後要觸發的副程式*/ 
 
 joinRoomInit()

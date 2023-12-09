@@ -140,16 +140,7 @@
     </main>
     
     <script>
-        function sendData() {
-            $(document).ready(function() {
-                $.post('dynamic.php', {
-                    name: "Jacky",
-                    bgm: "1"
-                }, function(response) {
-                        //$('#test').text(response); // 將伺服器端的回應設置為 id為test 元素的文字內容
-                });
-            });
-        }
+        
     </script>
 </body>
 <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
