@@ -39,7 +39,13 @@
     
 </head>
 <body>
-
+    <?
+    echo "
+    <audio autoplay loop>
+        <source src='../music.mp3' type='audio/mpeg'>
+        Your browser does not support the audio element.
+    </audio>";
+    ?>
     <header id="nav">  <!-- 頭標欄處 -->
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
                 <button id="members__button"> <!--手機?-->
