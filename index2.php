@@ -2,7 +2,7 @@
 if (isset($_POST["name"])) {
     echo "Hello world, " . $_POST["name"] . "!";
     // 如果需要返回數據給前端，可以使用 JSON 格式，例如：
-    // echo json_encode(["message" => "Hello world, " . $_POST["name"] . "!"]);
+    echo json_encode(["message" => "Hello world, " . $_POST["name"] . "!"]);
 } else {
     // 如果沒有收到名字，你可以返回一個錯誤訊息或者其他內容
 }
@@ -21,7 +21,7 @@ if (isset($_POST["name"])) {
                 name: "Jacky",
                 number: "1"
             }, function(response) {
-                $('#test').html(response); // 將伺服器端的回應設置為 #test 元素的文字內容
+                //$('#test').html(response); // 將伺服器端的回應設置為 #test 元素的文字內容
             });
         };
     </script>
