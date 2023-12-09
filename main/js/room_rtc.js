@@ -256,7 +256,7 @@ function sendData() {
             name: "Jacky",
             bgm: "1"
         }, function(response) {
-                //$('#test').text(response); // 將伺服器端的回應設置為 id為test 元素的文字內容
+                $('#test').text(response); // 將伺服器端的回應設置為 id為test 元素的文字內容
         });
     });
 }
