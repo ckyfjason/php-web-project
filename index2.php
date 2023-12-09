@@ -10,13 +10,16 @@ if (isset($_POST["name"])) {
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
     </head>
     <body>
+      <div id='test'>
+      <div>
       <script>
         function sayHello(){
             $.post('index2.php',{
                 name: "Jacky",
                 number: "1"
             }, function(txt){
-                $('#message').html(txt);
+                document.getElementById('test').insertAdjacentHTML('beforeend', $('#message').html(txt))
+                //$('#message').html(txt);
             });
         };
       </script>
