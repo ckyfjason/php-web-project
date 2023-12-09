@@ -45,11 +45,14 @@
     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
     if($row) {
         $bgmValue = $row["bgm"];
-        echo "
+        if($bgmValue ==1) {
+            echo "
             <audio autoplay loop>
                 <source src='../music.mp3' type='audio/mpeg'>
                 Your browser does not support the audio element.
             </audio>";
+    
+        }
     }
     ?>
     <header id="nav">  <!-- 頭標欄處 -->
