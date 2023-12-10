@@ -42,7 +42,7 @@
                  <h3 id="logo">
                      <img src="./main/images/logo.png" alt="Site Logo">
                      <span>直播平台</span>
-                     <button class="nav__link" id="create__room__btn" href="" onclick="bgmswitch()">按鈕</button>
+                     <button class="nav__link" id="playButton" href="" onclick="bgmswitch()">按鈕</button>
                  </h3>
              </a>
         </div>
@@ -71,12 +71,6 @@
      </header> 
      
     
-    <!--<div class="hero__section">
-        <h2>Capstone<br>Project</h2>
-        <div class="hero__section__img">
-            <img style="max-height: 550px;object-fit: contain;" src="./main/images/img.PNG">
-        </div>
-    </section>-->
 
     
 
@@ -139,9 +133,11 @@
         
     </main>
     <audio id="backgroundMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
     </audio>
+
+<button id="playButton">Play Music</button>
     
 <script>
     function redirectToRoom(roomId) {
@@ -149,10 +145,20 @@
         window.location = `main/room.php?room=${roomId}`;
     }
 
-    function bgmswitch() {
-        const backgroundMusic = document.getElementById('backgroundMusic');
-        backgroundMusic.play();
-    }
+    window.addEventListener('load', function() {
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', function() {
+        if (backgroundMusic.paused) {
+        backgroundMusic.play(); // 如果音樂暫停中，則開始播放
+        playButton.textContent = 'Pause Music'; // 更新按鈕文字為“暫停音樂”
+        } else {
+        backgroundMusic.pause(); // 如果音樂正在播放，則暫停播放
+        playButton.textContent = 'Play Music'; // 更新按鈕文字為“播放音樂”
+        }
+    });
+    });
 
 
 </script>    
