@@ -53,17 +53,7 @@
                     </h3>
                 </a>
                 <button onclick="sendData()">Send</button>
-                <?php
-                if($_POST['user_input']) {
-                    $receivedVariable = $_POST['user_input'];
-
-                    $newVariable = $receivedVariable;
-
-                    // 以下是一个简单的示例输出，可以根据需求做出相应的处理
-                    echo "已接收到变量并存储到 PHP 变量中：" . $newVariable;
-                }
                 
-                ?>
         </div>
 
         <div id="nav__links">  
