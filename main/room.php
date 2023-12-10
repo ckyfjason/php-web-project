@@ -39,22 +39,6 @@
     
 </head>
 <body>
-    <?
-    $query = "SELECT bgm FROM rooms WHERE roomid=1";
-    $result = sqlsrv_query($conn, $query);
-    $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
-    if($row) {
-        $bgmValue = $row["bgm"];
-        if($row["bgm"]) {
-            echo "
-            <audio autoplay loop>
-                <source src='../music.mp3' type='audio/mpeg'>
-                Your browser does not support the audio element.
-            </audio>";
-    
-        }
-    }
-    ?>
     <header id="nav">  <!-- 頭標欄處 -->
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
                 <button id="members__button"> <!--手機?-->
@@ -120,9 +104,7 @@
                     <button id="screen-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 1v17h24v-17h-24zm22 15h-20v-13h20v13zm-6.599 4l2.599 3h-12l2.599-3h6.802z"/></svg>
                     </button>
-                    <button id="bgm-btn">  
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 1v17h24v-17h-24zm22 15h-20v-13h20v13zm-6.599 4l2.599 3h-12l2.599-3h6.802z"/></svg>
-                    </button>
+                    
                     <button id="leave-btn" style="background-color: #FF5050;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 10v-5l8 7-8 7v-5h-8v-4h8zm-16-8v20h14v-2h-12v-16h12v-2h-14z"/></svg>
                     </button>
