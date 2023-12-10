@@ -36,16 +36,13 @@
         echo '</script>';
     }
     ?>
-    <audio autoplay loop>
-        <source src='./music.mp3' type='audio/mpeg'>
-        Your browser does not support the audio element.
-    </audio>
     <header id="nav">
         <div class="nav--list">
              <a href="index.php">
                  <h3 id="logo">
                      <img src="./main/images/logo.png" alt="Site Logo">
                      <span>直播平台</span>
+                     <button class="nav__link" id="create__room__btn" href="" onclick="bgmswitch()">按鈕</button>
                  </h3>
              </a>
         </div>
@@ -141,11 +138,25 @@
         </div>
         
     </main>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     
 <script>
     function redirectToRoom(roomId) {
         document.cookie = `mytestvalue=${roomId}; path=/`;
         window.location = `main/room.php?room=${roomId}`;
+    }
+
+    window.addEventListener('load', function() {
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        backgroundMusic.play();
+    });
+
+    function bgmswitch(roomId) {
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        backgroundMusic.pause();
     }
 
 
