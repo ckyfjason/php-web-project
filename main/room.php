@@ -40,7 +40,7 @@
 </head>
 <body>
     <?php
-    if(!empty($_SESSION['username']) ) {
+    if(empty($_SESSION['username']) ) {
         echo "<div class='form'>
                 <h3>你未登入。</h3>
                 <br/>點擊這裡<a href='index.php'>返回</a></div>";
