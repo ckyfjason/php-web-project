@@ -36,6 +36,7 @@
         echo '</script>';
     }
     ?>
+
     <header id="nav">
         <div class="nav--list">
              <a href="index.php">
@@ -70,6 +71,12 @@
      </header> 
      
     
+    <!--<div class="hero__section">
+        <h2>Capstone<br>Project</h2>
+        <div class="hero__section__img">
+            <img style="max-height: 550px;object-fit: contain;" src="./main/images/img.PNG">
+        </div>
+    </section>-->
 
     
 
@@ -131,18 +138,12 @@
         </div>
         
     </main>
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
-
     
 <script>
     function redirectToRoom(roomId) {
         document.cookie = `mytestvalue=${roomId}; path=/`;
         window.location = `main/room.php?room=${roomId}`;
     }
-
-    
 
 
 </script>    
