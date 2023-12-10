@@ -138,7 +138,7 @@
         </div>
         
     </main>
-    <audio id="backgroundMusic" autoplay loop>
+    <audio id="backgroundMusic" loop>
         <source src="music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -149,10 +149,9 @@
         window.location = `main/room.php?room=${roomId}`;
     }
 
-
     function bgmswitch() {
         const backgroundMusic = document.getElementById('backgroundMusic');
-        backgroundMusic.pause();
+        backgroundMusic.play();
     }
 
 
