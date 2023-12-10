@@ -12,7 +12,7 @@
 if(!empty($_SESSION['username']) ) {
     echo "<div class='form'>
               <h3>你已登入。</h3>
-              <br/>點擊這裡<a href='index.php'>返回</a></div>";
+              <br/>點擊這裡<a href='../index.php'>返回</a></div>";
     exit();
 }    
 

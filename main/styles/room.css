@@ -243,6 +243,12 @@
   border-radius: 50%;
 }
 
+.backk{
+  width: 222px;
+  margin: 0 auto;
+  margin-top: 20vh;
+}
+
 @media (max-width: 1400px) {
   .video__container{
     height: 200px;
