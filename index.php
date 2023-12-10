@@ -138,7 +138,10 @@
         </div>
         
     </main>
-    
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 <script>
     function redirectToRoom(roomId) {
         document.cookie = `mytestvalue=${roomId}; path=/`;
