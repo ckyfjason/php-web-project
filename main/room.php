@@ -52,7 +52,7 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
-                <!--<button onclick="sendData()">Send</button>-->
+                
         </div>
 
         <div id="nav__links">  
@@ -105,9 +105,7 @@
                     <button id="screen-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 1v17h24v-17h-24zm22 15h-20v-13h20v13zm-6.599 4l2.599 3h-12l2.599-3h6.802z"/></svg>
                     </button>
-                    <!--<button id="bgm-btn">  
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 1v17h24v-17h-24zm22 15h-20v-13h20v13zm-6.599 4l2.599 3h-12l2.599-3h6.802z"/></svg>
-                    </button>-->
+                    
                     <button id="leave-btn" style="background-color: #FF5050;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 10v-5l8 7-8 7v-5h-8v-4h8zm-16-8v20h14v-2h-12v-16h12v-2h-14z"/></svg>
                     </button>
@@ -128,20 +126,7 @@
         </div>
     </main>
     
-    <script>
-        function sendData() {
-            var userInput = 10;
-
-            $.ajax({
-            type: 'POST',
-            url: 'room.php',
-            data: { user_input: userInput },
-            success: function(response) {
-                alert('已成功发送至 PHP 文件');
-            }
-            });
-        }
-    </script>
+    
 </body>
 <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
 <script type="text/javascript" src="js/agora-rtm-sdk-1.4.4.js"></script>
