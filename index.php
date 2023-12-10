@@ -42,7 +42,6 @@
                  <h3 id="logo">
                      <img src="./main/images/logo.png" alt="Site Logo">
                      <span>直播平台</span>
-                     <button class="nav__link" id="playButton" href="" onclick="bgmswitch()">按鈕</button>
                  </h3>
              </a>
         </div>
@@ -132,9 +131,8 @@
         </div>
         
     </main>
-    <audio id="backgroundMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+    <audio id="backgroundMusic" auto loop>
+        <source src="music.mp3" type="audio/mpeg">
     </audio>
 
 <button id="playButton">Play Music</button>
@@ -145,20 +143,7 @@
         window.location = `main/room.php?room=${roomId}`;
     }
 
-    window.addEventListener('load', function() {
-    const backgroundMusic = document.getElementById('backgroundMusic');
-    const playButton = document.getElementById('playButton');
-
-    playButton.addEventListener('click', function() {
-        if (backgroundMusic.paused) {
-        backgroundMusic.play(); // 如果音樂暫停中，則開始播放
-        playButton.textContent = 'Pause Music'; // 更新按鈕文字為“暫停音樂”
-        } else {
-        backgroundMusic.pause(); // 如果音樂正在播放，則暫停播放
-        playButton.textContent = 'Play Music'; // 更新按鈕文字為“播放音樂”
-        }
-    });
-    });
+    
 
 
 </script>    
