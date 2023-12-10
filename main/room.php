@@ -43,7 +43,7 @@
     if(empty($_SESSION['username']) ) {
         echo "<div class='backk'>
                 <h3>你未登入。</h3>
-                <br/>點擊這裡<a href='index.php'>返回</a></div>";
+                <br/>點擊這裡<a href='../index.php'>返回</a></div>";
         exit();
     } 
     ?>
