@@ -149,16 +149,8 @@
         window.location = `main/room.php?room=${roomId}`;
     }
 
-    window.addEventListener('load', function() {
-        let start = true;
-        if(start==true) {
-            const backgroundMusic = document.getElementById('backgroundMusic');
-            backgroundMusic.play();
-            start = false;
-        }
-    });
 
-    function bgmswitch(roomId) {
+    function bgmswitch() {
         const backgroundMusic = document.getElementById('backgroundMusic');
         backgroundMusic.pause();
     }
