@@ -36,7 +36,10 @@
         echo '</script>';
     }
     ?>
-
+    <audio autoplay loop>
+        <source src='./music.mp3' type='audio/mpeg'>
+        Your browser does not support the audio element.
+    </audio>
     <header id="nav">
         <div class="nav--list">
              <a href="index.php">
