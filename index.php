@@ -150,8 +150,12 @@
     }
 
     window.addEventListener('load', function() {
-        const backgroundMusic = document.getElementById('backgroundMusic');
-        backgroundMusic.play();
+        bool start = true;
+        if(start==true) {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            backgroundMusic.play();
+            bool = false;
+        }
     });
 
     function bgmswitch(roomId) {
