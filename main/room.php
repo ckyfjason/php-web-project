@@ -39,6 +39,14 @@
     
 </head>
 <body>
+    <?php
+    if(!empty($_SESSION['username']) ) {
+        echo "<div class='form'>
+                <h3>你未登入。</h3>
+                <br/>點擊這裡<a href='index.php'>返回</a></div>";
+        exit();
+    } 
+    ?>
 
     <header id="nav">  <!-- 頭標欄處 -->
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
