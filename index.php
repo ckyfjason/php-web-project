@@ -150,11 +150,11 @@
     }
 
     window.addEventListener('load', function() {
-        bool start = true;
+        let start = true;
         if(start==true) {
             const backgroundMusic = document.getElementById('backgroundMusic');
             backgroundMusic.play();
-            bool = false;
+            start = false;
         }
     });
 
