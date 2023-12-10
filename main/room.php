@@ -52,7 +52,7 @@
                         <span>直播平台</span>
                     </h3>
                 </a>
-                <button onclick="sendData()">Send</button>
+                <!--<button onclick="sendData()">Send</button>-->
                 
         </div>
 
