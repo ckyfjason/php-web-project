@@ -131,11 +131,10 @@
         </div>
         
     </main>
-    <audio id="backgroundMusic" auto loop>
+    <audio id="backgroundMusic" autoplay loop>
         <source src="music.mp3" type="audio/mpeg">
     </audio>
 
-<button id="playButton">Play Music</button>
     
 <script>
     function redirectToRoom(roomId) {
