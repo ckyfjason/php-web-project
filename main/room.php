@@ -40,7 +40,7 @@
 </head>
 <body>
     <?
-    $query = "SELECT bgm FROM rooms WHERE roomid=1";
+    /*$query = "SELECT bgm FROM rooms WHERE roomid=1";
     $result = sqlsrv_query($conn, $query);
     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
     if($row) {
@@ -53,7 +53,7 @@
             </audio>";
     
         }
-    }
+    }*/
     ?>
     <header id="nav">  <!-- 頭標欄處 -->
         <div class="nav--list">  <!-- 頭標欄左上角logo與文字 -->
